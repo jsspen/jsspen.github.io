@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/fonts.css" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/style.css" />
+    <title>
+      
+    piglatin - Jordan Spencer | Software Dev
+
+    </title>
+    
+  </head>
+  <body>
+    
+<div class="wrap">
+  <div class="section" id="title"></div>
+  <div class="section" id="sections">
+    
+  </div>
+  <div class="section" id="content">
+    
+    
+        
+    
+    <p><strong>Source:</strong> <a href="https://www.codewars.com/kata/520b9d2ad5c005041100000f">Codewars</a></p>
+<p><strong>The Challenge:</strong> Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">pigIt</span><span>(</span><span style="color:#bf616a;">str</span><span>) {
+</span><span>  </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">results </span><span>= &quot;&quot;;
+</span><span>  </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">start </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>  </span><span style="color:#b48ead;">for </span><span>(</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">x </span><span>= </span><span style="color:#d08770;">0</span><span>; </span><span style="color:#bf616a;">x </span><span>&lt;= </span><span style="color:#bf616a;">str</span><span>.length; </span><span style="color:#bf616a;">x</span><span>++) {
+</span><span>    </span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">str</span><span>[</span><span style="color:#bf616a;">x</span><span>] === &quot; &quot; || </span><span style="color:#bf616a;">x </span><span>=== </span><span style="color:#bf616a;">str</span><span>.length) {
+</span><span>      </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">word </span><span>= </span><span style="color:#bf616a;">str</span><span>.</span><span style="color:#96b5b4;">slice</span><span>(</span><span style="color:#bf616a;">start</span><span>, </span><span style="color:#bf616a;">x</span><span>);
+</span><span>      </span><span style="color:#bf616a;">start </span><span>= </span><span style="color:#bf616a;">x </span><span>+ </span><span style="color:#d08770;">1</span><span>;
+</span><span>      </span><span style="color:#bf616a;">results </span><span>+= </span><span style="color:#bf616a;">word</span><span>.</span><span style="color:#96b5b4;">substr</span><span>(</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#bf616a;">word</span><span>.length - </span><span style="color:#d08770;">1</span><span>) + </span><span style="color:#bf616a;">word</span><span>.</span><span style="color:#96b5b4;">charAt</span><span>(</span><span style="color:#d08770;">0</span><span>);
+</span><span>      </span><span style="color:#b48ead;">if </span><span>(!/</span><span style="color:#d08770;">[!&quot;#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[</span><span style="color:#96b5b4;">\]</span><span style="color:#d08770;">^_`{|}~]</span><span>/.</span><span style="color:#96b5b4;">test</span><span>(</span><span style="color:#bf616a;">word</span><span>[</span><span style="color:#bf616a;">word</span><span>.length - </span><span style="color:#d08770;">1</span><span>])) {
+</span><span>        </span><span style="color:#bf616a;">results </span><span>+= &quot;</span><span style="color:#a3be8c;">ay</span><span>&quot;;
+</span><span>      }
+</span><span>      </span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">x </span><span>!== </span><span style="color:#bf616a;">str</span><span>.length) {
+</span><span>        </span><span style="color:#bf616a;">results </span><span>+= &quot; &quot;;
+</span><span>      }
+</span><span>    }
+</span><span>  }
+</span><span>  </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">results</span><span>;
+</span><span>}
+</span></code></pre>
+
+
+  </div>
+  
+  <div class="section bottom-menu">
+    <hr />
+    <p>
+      
+        
+          <a href="&#x2F;projects">projects</a>
+          &#183;
+        
+          <a href="&#x2F;about">about</a>
+          &#183;
+        
+          <a href="&#x2F;cv">cv</a>
+          &#183;
+        
+      
+      <a href="https:&#x2F;&#x2F;jordan-spencer.com">home</a>
+    </p>
+  </div>
+ 
+  
+
+</div>
+
+  </body>
+</html>

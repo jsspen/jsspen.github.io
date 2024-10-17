@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/fonts.css" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/style.css" />
+    <title>
+      
+    no more dts - Jordan Spencer | Software Dev
+
+    </title>
+    
+  </head>
+  <body>
+    
+<div class="wrap">
+  <div class="section" id="title"></div>
+  <div class="section" id="sections">
+    
+  </div>
+  <div class="section" id="content">
+    
+    
+        
+    
+    <h1 id="nomoredts">NoMoreDTS</h1>
+<p>A CLI program to handle audio conversion of video files with FFMPEG</p>
+<h2 id="github-repo">GitHub Repo</h2>
+<p><a href="https://github.com/jsspen/NoMoreDTS">NoMoreDTS</a></p>
+<h2 id="basic-usage">Basic usage</h2>
+<ul>
+<li>Clone or download repo</li>
+<li>Open terminal in root directory</li>
+<li>Update base path values in the code</li>
+<li>Run the program with <code>python NoMoreDTS.py</code></li>
+</ul>
+<h3 id="manual-entry">Manual Entry</h3>
+<p>Provide the necessary information to process a single file. This option also allows for customizing the base path and the FFMPEG command used for processing.</p>
+<ul>
+<li>When prompted enter <code>m</code> for manual entry</li>
+<li>Default base paths are hardcoded on lines 34 &amp; 35, make sure to update these with the relevant values for your useage.</li>
+<li>Provide a destination path, meaning the name of the directory where the converted file should be saved. This will be combined with the <code>OUTPUT_BASE</code> (whether pre-defined or set during run) to ensure the directory exists before the conversion process begins.</li>
+<li>Provide the input path, including file extension. This will be combined with the <code>INPUT_BASE</code> (whether pre-defined or set during run) to create the full input path passed to FFMPEG. If the <code>INPUT_BASE</code> value is set to the root directory of the file then only the filename and extension need to be entered here but it will also accept any amount of nested directories, too.</li>
+<li>Provide the output filename desired.</li>
+<li>Decide on using the default FFMPEG command or something else</li>
+<li>Process!</li>
+</ul>
+<h3 id="file-entry">File Entry</h3>
+<p>A CSV file can be passed to process multiple files</p>
+<ul>
+<li>When prompted enter <code>c</code> for file input</li>
+<li>File should be saved in the app root directory</li>
+<li>Program expects the first row of the file to be a labeled header row with the three columns: <code>OUTPUT_DIRECTORY</code>, <code>INPUT_FILE_PATH</code>, and <code>OUTPUT_FILENAME</code>.</li>
+<li>This will always process the files using the same FFMPEG command, though you are given the option to use a custom command.</li>
+</ul>
+<h2 id="source-code">Source Code</h2>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">import </span><span>os
+</span><span style="color:#b48ead;">import </span><span>subprocess
+</span><span style="color:#b48ead;">import </span><span>csv
+</span><span>
+</span><span style="color:#65737e;"># create directory if it doesn&#39;t exist
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">create_directory</span><span>(</span><span style="color:#bf616a;">path</span><span>):
+</span><span>    </span><span style="color:#b48ead;">if </span><span>not os.path.</span><span style="color:#bf616a;">exists</span><span>(path):
+</span><span>        os.</span><span style="color:#bf616a;">makedirs</span><span>(path)
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">Created directory: </span><span>{path}&quot;)
+</span><span>    </span><span style="color:#b48ead;">else</span><span>:
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">Directory already exists: </span><span>{path}&quot;)
+</span><span>
+</span><span style="color:#65737e;"># run the ffmpeg command
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">run_ffmpeg</span><span>(</span><span style="color:#bf616a;">INPUT_PATH</span><span>, </span><span style="color:#bf616a;">FULL_OUTPUT</span><span>, </span><span style="color:#bf616a;">FFMPEG_COMMAND</span><span>):
+</span><span>    command = [
+</span><span>        &quot;</span><span style="color:#a3be8c;">ffmpeg</span><span>&quot;,
+</span><span>        &quot;</span><span style="color:#a3be8c;">-i</span><span>&quot;, </span><span style="color:#bf616a;">INPUT_PATH</span><span>,
+</span><span>        *FFMPEG_COMMAND.</span><span style="color:#bf616a;">split</span><span>(),
+</span><span>        </span><span style="color:#bf616a;">FULL_OUTPUT
+</span><span>    ]
+</span><span>    </span><span style="color:#b48ead;">try</span><span>:
+</span><span>        subprocess.</span><span style="color:#bf616a;">run</span><span>(command, </span><span style="color:#bf616a;">check</span><span>=</span><span style="color:#d08770;">True</span><span>)
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">Conversion successful! File saved at: </span><span>{</span><span style="color:#bf616a;">FULL_OUTPUT</span><span>}&quot;)
+</span><span>    </span><span style="color:#b48ead;">except </span><span>subprocess.CalledProcessError </span><span style="color:#b48ead;">as </span><span>e:
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">Error during conversion: </span><span>{e}&quot;)
+</span><span>
+</span><span style="color:#65737e;"># take user input rather than csv file
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">manual_input</span><span>():
+</span><span>    </span><span style="color:#65737e;"># Manual input mode
+</span><span>    </span><span style="color:#bf616a;">USE_DEFAULT_PATHS </span><span>= </span><span style="color:#96b5b4;">input</span><span>(&#39;</span><span style="color:#a3be8c;">Do you want to use the default base paths? (y/n) </span><span>&#39;)
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">USE_DEFAULT_PATHS </span><span>== &#39;</span><span style="color:#a3be8c;">y</span><span>&#39;:
+</span><span>        </span><span style="color:#65737e;"># set by default
+</span><span>        </span><span style="color:#bf616a;">INPUT_BASE </span><span>= &#39;</span><span style="color:#a3be8c;">/hardcoded/path/to/input/</span><span>&#39;
+</span><span>        </span><span style="color:#bf616a;">OUTPUT_BASE </span><span>= &#39;</span><span style="color:#a3be8c;">/hardcoded/path/to/destination/</span><span>&#39;
+</span><span>        </span><span style="color:#65737e;"># file specific input
+</span><span>        </span><span style="color:#bf616a;">OUTPUT_DIRECTORY </span><span>= </span><span style="color:#96b5b4;">input</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">Destination path: </span><span>{</span><span style="color:#bf616a;">OUTPUT_BASE</span><span>}&#39;)
+</span><span>        </span><span style="color:#bf616a;">INPUT_FILE_PATH </span><span>= </span><span style="color:#96b5b4;">input</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">Current path (including extension): </span><span>{</span><span style="color:#bf616a;">INPUT_BASE</span><span>}&#39;)
+</span><span>        </span><span style="color:#bf616a;">OUTPUT_FILENAME </span><span>= </span><span style="color:#96b5b4;">input</span><span>(&#39;</span><span style="color:#a3be8c;">Output filename? </span><span>&#39;)
+</span><span>        </span><span style="color:#65737e;"># combining default &amp; input
+</span><span>        </span><span style="color:#65737e;"># output base + output directory = path for creating output directory if it doesn&#39;t exist
+</span><span>        </span><span style="color:#bf616a;">OUTPUT_PATH </span><span>= </span><span style="color:#b48ead;">f</span><span>&quot;{</span><span style="color:#bf616a;">OUTPUT_BASE</span><span>}{</span><span style="color:#bf616a;">OUTPUT_DIRECTORY</span><span>}&quot;
+</span><span>        </span><span style="color:#65737e;"># input base + input path = ffmpeg input
+</span><span>        </span><span style="color:#bf616a;">INPUT_PATH </span><span>= </span><span style="color:#b48ead;">f</span><span>&quot;{</span><span style="color:#bf616a;">INPUT_BASE</span><span>}{</span><span style="color:#bf616a;">INPUT_FILE_PATH</span><span>}&quot;
+</span><span>        </span><span style="color:#65737e;"># output path + output filename = ffmpeg output
+</span><span>        </span><span style="color:#bf616a;">FULL_OUTPUT </span><span>= </span><span style="color:#b48ead;">f</span><span>&quot;{</span><span style="color:#bf616a;">OUTPUT_PATH</span><span>}</span><span style="color:#a3be8c;">/</span><span>{</span><span style="color:#bf616a;">OUTPUT_FILENAME</span><span>}&quot;
+</span><span>        </span><span style="color:#65737e;"># check
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">Creating: </span><span>{</span><span style="color:#bf616a;">OUTPUT_PATH</span><span>}&#39;)
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">Processing: </span><span>{</span><span style="color:#bf616a;">INPUT_PATH</span><span>}&#39;)
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">Outputting: </span><span>{</span><span style="color:#bf616a;">FULL_OUTPUT</span><span>}&#39;)
+</span><span>        </span><span style="color:#65737e;">####### TO DO #######
+</span><span>        </span><span style="color:#65737e;"># correct = input(&#39;Is this correct?&#39;)
+</span><span>    </span><span style="color:#b48ead;">else</span><span>:
+</span><span>        </span><span style="color:#bf616a;">OUTPUT_PATH </span><span>= </span><span style="color:#96b5b4;">input</span><span>(&#39;</span><span style="color:#a3be8c;">Enter the full path for the final destination directory: </span><span>&#39;)
+</span><span>        </span><span style="color:#bf616a;">INPUT_PATH </span><span>= </span><span style="color:#96b5b4;">input</span><span>(&#39;</span><span style="color:#a3be8c;">Enter the full path for the current file, including extension: </span><span>&#39;)
+</span><span>        </span><span style="color:#bf616a;">OUTPUT_FILENAME </span><span>= </span><span style="color:#96b5b4;">input</span><span>(&#39;</span><span style="color:#a3be8c;">What is the desired final filename? </span><span>&#39;)
+</span><span>        </span><span style="color:#bf616a;">FULL_OUTPUT </span><span>= </span><span style="color:#b48ead;">f</span><span>&quot;{</span><span style="color:#bf616a;">OUTPUT_PATH</span><span>}</span><span style="color:#a3be8c;">/</span><span>{</span><span style="color:#bf616a;">OUTPUT_FILENAME</span><span>}&quot;
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">Creating: </span><span>{</span><span style="color:#bf616a;">OUTPUT_PATH</span><span>}&#39;)
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">Processing: </span><span>{</span><span style="color:#bf616a;">INPUT_PATH</span><span>}&#39;)
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">Outputting: </span><span>{</span><span style="color:#bf616a;">FULL_OUTPUT</span><span>}&#39;)
+</span><span>        </span><span style="color:#65737e;">####### TO DO #######
+</span><span>        </span><span style="color:#65737e;"># correct = input(&#39;Is this correct?&#39;)
+</span><span>
+</span><span>    </span><span style="color:#65737e;"># Give option to change command or use default
+</span><span>    </span><span style="color:#bf616a;">FFMPEG_COMMAND </span><span>= </span><span style="color:#bf616a;">set_FFMPEG_COMMAND</span><span>()
+</span><span>    </span><span style="color:#65737e;"># FFMPEG doesn&#39;t like if the output directory doesn&#39;t exist yet
+</span><span>    </span><span style="color:#bf616a;">create_directory</span><span>(</span><span style="color:#bf616a;">OUTPUT_PATH</span><span>)
+</span><span>    </span><span style="color:#65737e;"># Run the ffmpeg conversion
+</span><span>    </span><span style="color:#bf616a;">run_ffmpeg</span><span>(</span><span style="color:#bf616a;">INPUT_PATH</span><span>, </span><span style="color:#bf616a;">FULL_OUTPUT</span><span>, </span><span style="color:#bf616a;">FFMPEG_COMMAND</span><span>)
+</span><span>
+</span><span style="color:#65737e;"># Take a csv file as input
+</span><span style="color:#65737e;"># currently accepts header row with
+</span><span style="color:#65737e;"># OUTPUT_DIRECTORY, INPUT_FILE_PATH, OUTPUT_FILENAME
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">csv_input</span><span>():
+</span><span>    </span><span style="color:#bf616a;">CSV_FILE </span><span>= </span><span style="color:#96b5b4;">input</span><span>(&#39;</span><span style="color:#a3be8c;">Enter the name of the CSV file: </span><span>&#39;)
+</span><span>    </span><span style="color:#65737e;"># Get command outside of the loop so you don&#39;t have to keep answering
+</span><span>    </span><span style="color:#65737e;"># Assumes you&#39;re going to use the same command for batch processing
+</span><span>    </span><span style="color:#bf616a;">FFMPEG_COMMAND </span><span>= </span><span style="color:#bf616a;">set_FFMPEG_COMMAND</span><span>()
+</span><span>    </span><span style="color:#b48ead;">try</span><span>:
+</span><span>        </span><span style="color:#b48ead;">with </span><span style="color:#96b5b4;">open</span><span>(</span><span style="color:#bf616a;">CSV_FILE</span><span>, </span><span style="color:#bf616a;">mode</span><span>=&#39;</span><span style="color:#a3be8c;">r</span><span>&#39;) </span><span style="color:#b48ead;">as </span><span>file:
+</span><span>            reader = csv.</span><span style="color:#bf616a;">reader</span><span>(file)
+</span><span>            </span><span style="color:#65737e;"># Skip first (header) row
+</span><span>            </span><span style="color:#96b5b4;">next</span><span>(reader, </span><span style="color:#d08770;">None</span><span>)
+</span><span>            </span><span style="color:#b48ead;">for </span><span>row </span><span style="color:#b48ead;">in </span><span>reader:
+</span><span>                </span><span style="color:#bf616a;">OUTPUT_DIRECTORY</span><span>, </span><span style="color:#bf616a;">INPUT_FILE_PATH</span><span>, </span><span style="color:#bf616a;">OUTPUT_FILENAME </span><span>= row
+</span><span>                </span><span style="color:#65737e;"># Currently using a default base path
+</span><span>                </span><span style="color:#bf616a;">OUTPUT_PATH </span><span>= </span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">/hardcoded/path/to/destination/</span><span>{</span><span style="color:#bf616a;">OUTPUT_DIRECTORY</span><span>}&quot;
+</span><span>                </span><span style="color:#bf616a;">INPUT_PATH </span><span>= </span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">/hardcoded/path/to/input/</span><span>{</span><span style="color:#bf616a;">INPUT_FILE_PATH</span><span>}&quot;
+</span><span>                </span><span style="color:#bf616a;">FULL_OUTPUT </span><span>= </span><span style="color:#b48ead;">f</span><span>&quot;{</span><span style="color:#bf616a;">OUTPUT_PATH</span><span>}</span><span style="color:#a3be8c;">/</span><span>{</span><span style="color:#bf616a;">OUTPUT_FILENAME</span><span>}&quot;
+</span><span>
+</span><span>                </span><span style="color:#65737e;"># Create destination directory
+</span><span>                </span><span style="color:#bf616a;">create_directory</span><span>(</span><span style="color:#bf616a;">OUTPUT_PATH</span><span>)
+</span><span>                </span><span style="color:#65737e;"># Run the ffmpeg conversion
+</span><span>                </span><span style="color:#bf616a;">run_ffmpeg</span><span>(</span><span style="color:#bf616a;">INPUT_PATH</span><span>, </span><span style="color:#bf616a;">FULL_OUTPUT</span><span>, </span><span style="color:#bf616a;">FFMPEG_COMMAND</span><span>)
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">except </span><span>FileNotFoundError:
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">Error: CSV file &#39;</span><span>{</span><span style="color:#bf616a;">CSV_FILE</span><span>}</span><span style="color:#a3be8c;">&#39; not found.</span><span>&quot;)
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">set_FFMPEG_COMMAND</span><span>():
+</span><span>    </span><span style="color:#bf616a;">FFMPEG_COMMAND </span><span>= &quot;</span><span style="color:#a3be8c;">-map 0 -c:v copy -c:a ac3 -b:a 640k -c:s copy</span><span>&quot;
+</span><span>    </span><span style="color:#bf616a;">USE_DEFAULT_COMMAND </span><span>= </span><span style="color:#96b5b4;">input</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">Do you want to use the default command: </span><span>{</span><span style="color:#bf616a;">FFMPEG_COMMAND</span><span>}</span><span style="color:#a3be8c;">? (y/n) </span><span>&#39;)
+</span><span>    </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">USE_DEFAULT_COMMAND </span><span>!= &#39;</span><span style="color:#a3be8c;">y</span><span>&#39;:
+</span><span>        </span><span style="color:#bf616a;">FFMPEG_COMMAND </span><span>= </span><span style="color:#96b5b4;">input</span><span>(&#39;</span><span style="color:#a3be8c;">Enter the desired command: </span><span>&#39;)
+</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">FFMPEG_COMMAND
+</span><span>
+</span><span style="color:#65737e;"># Select input type
+</span><span style="color:#65737e;"># csv file must be in root directory
+</span><span style="color:#bf616a;">INPUT_TYPE </span><span>= </span><span style="color:#96b5b4;">input</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">Enter </span><span style="color:#96b5b4;">\&#39;</span><span style="color:#a3be8c;">c</span><span style="color:#96b5b4;">\&#39;</span><span style="color:#a3be8c;"> for csv input or </span><span style="color:#96b5b4;">\&#39;</span><span style="color:#a3be8c;">m</span><span style="color:#96b5b4;">\&#39;</span><span style="color:#a3be8c;"> for manual: </span><span>&#39;)
+</span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">INPUT_TYPE </span><span>== &#39;</span><span style="color:#a3be8c;">c</span><span>&#39;:
+</span><span>    </span><span style="color:#bf616a;">csv_input</span><span>()
+</span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">INPUT_TYPE </span><span>== &#39;</span><span style="color:#a3be8c;">m</span><span>&#39;:
+</span><span>    </span><span style="color:#bf616a;">manual_input</span><span>()
+</span><span>
+</span></code></pre>
+
+
+  </div>
+  
+  <div class="section bottom-menu">
+    <hr />
+    <p>
+      
+        
+          <a href="&#x2F;projects">projects</a>
+          &#183;
+        
+          <a href="&#x2F;about">about</a>
+          &#183;
+        
+          <a href="&#x2F;cv">cv</a>
+          &#183;
+        
+      
+      <a href="https:&#x2F;&#x2F;jordan-spencer.com">home</a>
+    </p>
+  </div>
+ 
+  
+
+</div>
+
+  </body>
+</html>

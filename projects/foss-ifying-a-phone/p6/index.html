@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/fonts.css" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/style.css" />
+    <title>
+      
+    Part 6: Should I Self-Host a Password Manager? - Jordan Spencer | Software Dev
+
+    </title>
+    
+  </head>
+  <body>
+    
+<div class="wrap">
+  <div class="section" id="title"></div>
+  <div class="section" id="sections">
+    
+  </div>
+  <div class="section" id="content">
+    
+    
+        
+    
+    <h2 id="part-6-should-i-self-host-a-password-manager">Part 6: Should I Self-Host a Password Manager?</h2>
+<p>This is Part 6 of an ongoing series detailing my experience dumbing down my phone, taking ownership of my data, and learning a lot about FOSS along the way. NOTE: These are living documents that will surely change with time!</p>
+<p>...</p>
+<h3 id="the-password-manager">The Password Manager</h3>
+<p>I had been a longtime OnePass user until their big data breach at which point I made the jump to BitWarden. It's been less reliable when it comes to autofill, especially in apps, or with automatically saving new logins on mobile, but otherwise fine. I've considered self-hosting it but at this point I don't think my setup and abilities are strong enough to justify the risk.</p>
+<h3 id="maps">Maps</h3>
+<p>I'm pretty basic when it comes to how I use GPS in that I really don't like turn-by-turn directions so I mostly just calculate directions and then refer to the list of steps while navigating. I find this helps me be more aware of my surroundings in a way that improves my ability to get around without needing a GPS all the time. I'm OK with making a wrong turn or taking a potentially less-efficient path.</p>
+<p>My wife is heavily reliant on turn-by-turn, though, so finding her a good alternative is going to be important if she's going to follow me down this path. OsmAnd seems to cover all the bases but I haven't spent much time with it yet. I love all the data it offers and the various off-line options and plugins (like choosing an area and downloading all the relevant Wiki articles pertaining to its history and points of interest) but the initial screen was definitely overwhelming and hard on the eyes. I'm going to have to spend a little time customizing it and testing out the turn-by-turn option.</p>
+<p>Maps Revisited
+Yesterday was my first real test of using OsmAnd instead of Google Maps and it didn't go great. I wasn't getting any audio for turn-by-turn so I spent a while fiddling with the voice settings. Turns out Graphene doesn't ship with a TTS engine and nothing in OsmAnd was indicating that. It would be nice if there were some kind of indication in the settings for voice that lets you know but I guess most OSs probably ship with an engine. The FOSS options for a TTS engine aren't too wide and again I didn't want to just play with loopholes to get the Google engine, so I went with RHVoice. Once I set that as the default in my system settings I finally started getting audio.</p>
+<p>The bigger issue was just telling it where I wanted to go. I was meeting up with friends for a drink at a popular bar that's been open now for about 9 months now. It wasn't findable by search, which was a little annoying but fine, but when I tried to input the address things got really wonky. The menus are a bit of a mess and it's not clear how it wants addresses input. The bar is in a building that has been standing for decades at that address but it seemed like the address wasn't in the OpenStreetMap database, so the app kept setting my destination to a random point on the street. This might work well enough sometimes but in this case the street spans half the city and the point the app selected was miles away from my actual destination. Eventually I just zoomed in close and manually set the destination to the right building on the map and things were fine from there.</p>
+<p>Again, a situation I hadn't really considered. It looks like OsmAnd updates their OpenStreetMap database monthly (though I saw mention of being able to set it to instant) and there are numerous ways to contribute and fix/update/expand maps for the whole community. One method I've taken note of is called StreetComplete, which shows missing map data nearby in the form of "quests" to complete that then gets passed as updates to OpenStreetMap. I haven't started using it yet but it could be a fun way of exploring, too. We'll see.</p>
+<h3 id="smart-home">Smart Home</h3>
+<p>Another huge project I've been working on is smart-ing our home without any outside involvement or access. I don't like the idea of doorbell cameras for a variety of reasons (regardless of companies involved this sounds absolutely dystopian to me) but I really don't like doorbell cameras that give everything to Amazon and cops. I do love a lot of the conveniences smart devices can provide, though.</p>
+<p>Our house came with a Z-Wave lock on the front door and I've found it comforting to have it set up to lock itself if it's after sundown and its been unlocked for more than a couple minutes. It's also nice to have various lights turning on and off on a schedule and notifications for the garage door being open or our sump pump leaking. I've been running a local instance of Home Assistant from a dedicated Raspberry Pi for a couple of years now and though it definitely has a learning curve it's been great to take advantage of those things without feeling like our house is being monitored by anyone but us.</p>
+<p>I did take advantage of an offer a few years ago to get a Nest Thermostat for nearly nothing so Google does have an eye on our temperature, but it looks like controlling it exclusively locally via Matter is potentially possible. Another thing to look into later. For now I can control it as needed in Home Assistant and I don't have the Google Home app installed at all.</p>
+<h3 id="search-engine">Search Engine</h3>
+<p>The easiest de-Googling move to make. Set DuckDuckGo as default and forget.</p>
+
+
+  </div>
+  
+  <div class="section bottom-menu">
+    <hr />
+    <p>
+      
+        
+          <a href="&#x2F;projects">projects</a>
+          &#183;
+        
+          <a href="&#x2F;about">about</a>
+          &#183;
+        
+          <a href="&#x2F;cv">cv</a>
+          &#183;
+        
+      
+      <a href="https:&#x2F;&#x2F;jordan-spencer.com">home</a>
+    </p>
+  </div>
+ 
+  
+
+</div>
+
+  </body>
+</html>

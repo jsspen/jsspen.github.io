@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/fonts.css" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/style.css" />
+    <title>
+      
+    sumIntervals - Jordan Spencer | Software Dev
+
+    </title>
+    
+  </head>
+  <body>
+    
+<div class="wrap">
+  <div class="section" id="title"></div>
+  <div class="section" id="sections">
+    
+  </div>
+  <div class="section" id="content">
+    
+    
+        
+    
+    <p><strong>Source:</strong> <a href="https://www.codewars.com/kata/52b7ed099cdc285c300001cd">Codewars</a></p>
+<p><strong>The Challenge:</strong> Write a function that accepts an array of intervals, and returns the sum of all the interval lengths. Overlapping intervals should only be counted once. Intervals are represented by a pair of integers in the form of an array. The first value of the interval will always be less than the second value.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">sumIntervals</span><span>(</span><span style="color:#bf616a;">intervals</span><span>) {
+</span><span>  </span><span style="color:#bf616a;">intervals</span><span>.</span><span style="color:#96b5b4;">sort</span><span>((</span><span style="color:#bf616a;">a</span><span>, </span><span style="color:#bf616a;">b</span><span>) </span><span style="color:#b48ead;">=&gt; </span><span style="color:#bf616a;">a</span><span>[</span><span style="color:#d08770;">0</span><span>] - </span><span style="color:#bf616a;">b</span><span>[</span><span style="color:#d08770;">0</span><span>]);
+</span><span>  </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">sum </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>  </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">compositeIntervals </span><span>= [[</span><span style="color:#bf616a;">intervals</span><span>[</span><span style="color:#d08770;">0</span><span>][</span><span style="color:#d08770;">0</span><span>], </span><span style="color:#bf616a;">intervals</span><span>[</span><span style="color:#d08770;">0</span><span>][</span><span style="color:#d08770;">1</span><span>]]];
+</span><span>  </span><span style="color:#b48ead;">for </span><span>(</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">x </span><span>= </span><span style="color:#d08770;">0</span><span>; </span><span style="color:#bf616a;">x </span><span>+ </span><span style="color:#d08770;">1 </span><span>&lt; </span><span style="color:#bf616a;">intervals</span><span>.length; </span><span style="color:#bf616a;">x</span><span>++) {
+</span><span>    </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">y </span><span>= </span><span style="color:#bf616a;">x </span><span>+ </span><span style="color:#d08770;">1</span><span>;
+</span><span>    </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">ceiling </span><span>= </span><span style="color:#bf616a;">intervals</span><span>[</span><span style="color:#bf616a;">x</span><span>][</span><span style="color:#d08770;">1</span><span>];
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">x0 </span><span>= </span><span style="color:#bf616a;">compositeIntervals</span><span>[</span><span style="color:#bf616a;">compositeIntervals</span><span>.length - </span><span style="color:#d08770;">1</span><span>][</span><span style="color:#d08770;">0</span><span>];
+</span><span>    </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">x1 </span><span>= </span><span style="color:#bf616a;">compositeIntervals</span><span>[</span><span style="color:#bf616a;">compositeIntervals</span><span>.length - </span><span style="color:#d08770;">1</span><span>][</span><span style="color:#d08770;">1</span><span>];
+</span><span>    </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">y0 </span><span>= </span><span style="color:#bf616a;">intervals</span><span>[</span><span style="color:#bf616a;">y</span><span>][</span><span style="color:#d08770;">0</span><span>];
+</span><span>    </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">y1 </span><span>= </span><span style="color:#bf616a;">intervals</span><span>[</span><span style="color:#bf616a;">y</span><span>][</span><span style="color:#d08770;">1</span><span>];
+</span><span>    </span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">y0 </span><span>&lt;= </span><span style="color:#bf616a;">x1</span><span>) {
+</span><span>      </span><span style="color:#bf616a;">ceiling </span><span>= </span><span style="color:#bf616a;">x1 </span><span>&gt;= </span><span style="color:#bf616a;">y1 </span><span>? </span><span style="color:#bf616a;">x1 </span><span>: </span><span style="color:#bf616a;">y1</span><span>;
+</span><span>      </span><span style="color:#bf616a;">compositeIntervals</span><span>[</span><span style="color:#bf616a;">compositeIntervals</span><span>.length - </span><span style="color:#d08770;">1</span><span>][</span><span style="color:#d08770;">1</span><span>]
+</span><span>        = </span><span style="color:#bf616a;">ceiling</span><span>;
+</span><span>    } </span><span style="color:#b48ead;">else if </span><span>(</span><span style="color:#bf616a;">y0 </span><span>&gt; </span><span style="color:#bf616a;">x0 </span><span>&amp;&amp; </span><span style="color:#bf616a;">y0 </span><span>&gt; </span><span style="color:#bf616a;">x1 </span><span>&amp;&amp; </span><span style="color:#bf616a;">y1 </span><span>&gt; </span><span style="color:#bf616a;">x1</span><span>) {
+</span><span>      </span><span style="color:#bf616a;">compositeIntervals</span><span>.</span><span style="color:#96b5b4;">push</span><span>([</span><span style="color:#bf616a;">y0</span><span>, </span><span style="color:#bf616a;">y1</span><span>]);
+</span><span>    }
+</span><span>  }
+</span><span>  </span><span style="color:#b48ead;">for </span><span>(</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">x </span><span>= </span><span style="color:#d08770;">0</span><span>; </span><span style="color:#bf616a;">x </span><span>&lt; </span><span style="color:#bf616a;">compositeIntervals</span><span>.length; </span><span style="color:#bf616a;">x</span><span>++) {
+</span><span>    </span><span style="color:#bf616a;">sum </span><span>= </span><span style="color:#bf616a;">sum </span><span>+ (</span><span style="color:#bf616a;">compositeIntervals</span><span>[</span><span style="color:#bf616a;">x</span><span>][</span><span style="color:#d08770;">1</span><span>] - 
+</span><span>      </span><span style="color:#bf616a;">compositeIntervals</span><span>[</span><span style="color:#bf616a;">x</span><span>][</span><span style="color:#d08770;">0</span><span>]);
+</span><span>  }
+</span><span>  </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">sum</span><span>;
+</span><span>}
+</span></code></pre>
+
+
+  </div>
+  
+  <div class="section bottom-menu">
+    <hr />
+    <p>
+      
+        
+          <a href="&#x2F;projects">projects</a>
+          &#183;
+        
+          <a href="&#x2F;about">about</a>
+          &#183;
+        
+          <a href="&#x2F;cv">cv</a>
+          &#183;
+        
+      
+      <a href="https:&#x2F;&#x2F;jordan-spencer.com">home</a>
+    </p>
+  </div>
+ 
+  
+
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/fonts.css" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/style.css" />
+    <title>
+      
+    humanReadableTime - Jordan Spencer | Software Dev
+
+    </title>
+    
+  </head>
+  <body>
+    
+<div class="wrap">
+  <div class="section" id="title"></div>
+  <div class="section" id="sections">
+    
+  </div>
+  <div class="section" id="content">
+    
+    
+        
+    
+    <p><strong>Source:</strong> <a href="https://www.codewars.com/kata/52685f7382004e774f0001f7/train/javascript">Codewars</a></p>
+<p><strong>The Challenge:</strong> Write a function, which takes a non-negative integer (seconds) as input and returns the time
+in a human-readable format (<code>HH:MM:SS</code>). The maximum time never exceeds 359999 (<code>99:59:59</code>)</p>
+<ul>
+<li>HH = hours, padded to 2 digits, range: 00 - 99</li>
+<li>MM = minutes, padded to 2 digits, range: 00 - 59</li>
+<li>SS = seconds, padded to 2 digits, range: 00 - 59</li>
+</ul>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">humanReadable</span><span>(</span><span style="color:#bf616a;">seconds</span><span>) {
+</span><span>  </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">actualSeconds </span><span>= </span><span style="color:#bf616a;">seconds </span><span>% </span><span style="color:#d08770;">60 </span><span>&lt; </span><span style="color:#d08770;">10 </span><span>? &quot;</span><span style="color:#a3be8c;">0</span><span>&quot; +
+</span><span>   (</span><span style="color:#bf616a;">seconds </span><span>% </span><span style="color:#d08770;">60</span><span>) : </span><span style="color:#bf616a;">seconds </span><span>% </span><span style="color:#d08770;">60</span><span>;
+</span><span>  </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">minutes </span><span>= Math.</span><span style="color:#96b5b4;">floor</span><span>(</span><span style="color:#bf616a;">seconds </span><span>/ </span><span style="color:#d08770;">60</span><span>);
+</span><span>  </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">actualMinutes </span><span>= </span><span style="color:#bf616a;">minutes </span><span>% </span><span style="color:#d08770;">60 </span><span>&lt; </span><span style="color:#d08770;">10 </span><span>? &quot;</span><span style="color:#a3be8c;">0</span><span>&quot; +
+</span><span>   (</span><span style="color:#bf616a;">minutes </span><span>% </span><span style="color:#d08770;">60</span><span>) : </span><span style="color:#bf616a;">minutes </span><span>% </span><span style="color:#d08770;">60</span><span>;
+</span><span>  </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">hours </span><span>=
+</span><span>    Math.</span><span style="color:#96b5b4;">floor</span><span>(</span><span style="color:#bf616a;">minutes </span><span>/ </span><span style="color:#d08770;">60</span><span>) &lt; </span><span style="color:#d08770;">10
+</span><span>      ? &quot;</span><span style="color:#a3be8c;">0</span><span>&quot; + Math.</span><span style="color:#96b5b4;">floor</span><span>(</span><span style="color:#bf616a;">minutes </span><span>/ </span><span style="color:#d08770;">60</span><span>)
+</span><span>      : Math.</span><span style="color:#96b5b4;">floor</span><span>(</span><span style="color:#bf616a;">minutes </span><span>/ </span><span style="color:#d08770;">60</span><span>);
+</span><span>  </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">hours </span><span>+ &quot;</span><span style="color:#a3be8c;">:</span><span>&quot; + </span><span style="color:#bf616a;">actualMinutes </span><span>+ &quot;</span><span style="color:#a3be8c;">:</span><span>&quot; + </span><span style="color:#bf616a;">actualSeconds</span><span>;
+</span><span>}
+</span></code></pre>
+
+
+  </div>
+  
+  <div class="section bottom-menu">
+    <hr />
+    <p>
+      
+        
+          <a href="&#x2F;projects">projects</a>
+          &#183;
+        
+          <a href="&#x2F;about">about</a>
+          &#183;
+        
+          <a href="&#x2F;cv">cv</a>
+          &#183;
+        
+      
+      <a href="https:&#x2F;&#x2F;jordan-spencer.com">home</a>
+    </p>
+  </div>
+ 
+  
+
+</div>
+
+  </body>
+</html>

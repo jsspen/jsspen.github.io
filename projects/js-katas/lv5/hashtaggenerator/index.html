@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/fonts.css" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/style.css" />
+    <title>
+      
+    hashtagGenerator - Jordan Spencer | Software Dev
+
+    </title>
+    
+  </head>
+  <body>
+    
+<div class="wrap">
+  <div class="section" id="title"></div>
+  <div class="section" id="sections">
+    
+  </div>
+  <div class="section" id="content">
+    
+    
+        
+    
+    <p><strong>Source:</strong> <a href="https://www.codewars.com/kata/52449b062fb80683ec000024">Codewars</a></p>
+<p><strong>The Challenge:</strong> The marketing team is spending way too much time typing in hashtags. Let's help them with our own Hashtag Generator! Here's the deal:</p>
+<ul>
+<li>It must start with a hashtag (#).</li>
+<li>All words must have their first letter capitalized.</li>
+<li>If the final result is longer than 140 chars it must return false.</li>
+<li>If the input or the result is an empty string it must return false.</li>
+</ul>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">generateHashtag</span><span>(</span><span style="color:#bf616a;">str</span><span>) {
+</span><span>  </span><span style="color:#b48ead;">if </span><span>(!</span><span style="color:#bf616a;">str</span><span>) {
+</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#d08770;">false</span><span>;
+</span><span>  }
+</span><span>  </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">hashtag </span><span>= &quot;</span><span style="color:#a3be8c;">#</span><span>&quot;;
+</span><span>  </span><span style="color:#b48ead;">for </span><span>(</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">x </span><span>= </span><span style="color:#d08770;">0</span><span>; </span><span style="color:#bf616a;">x </span><span>&lt; </span><span style="color:#bf616a;">str</span><span>.length; </span><span style="color:#bf616a;">x</span><span>++) {
+</span><span>    </span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">str</span><span>[</span><span style="color:#bf616a;">x</span><span>] !== &quot; &quot;) {
+</span><span>      </span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">x </span><span>=== </span><span style="color:#d08770;">0</span><span>) {
+</span><span>        </span><span style="color:#bf616a;">hashtag </span><span>= </span><span style="color:#bf616a;">hashtag </span><span>+ </span><span style="color:#bf616a;">str</span><span>[</span><span style="color:#bf616a;">x</span><span>].</span><span style="color:#96b5b4;">toUpperCase</span><span>();
+</span><span>      } </span><span style="color:#b48ead;">else if </span><span>(</span><span style="color:#bf616a;">str</span><span>[</span><span style="color:#bf616a;">x </span><span>- </span><span style="color:#d08770;">1</span><span>] === &quot; &quot;) {
+</span><span>        </span><span style="color:#bf616a;">hashtag </span><span>= </span><span style="color:#bf616a;">hashtag </span><span>+ </span><span style="color:#bf616a;">str</span><span>[</span><span style="color:#bf616a;">x</span><span>].</span><span style="color:#96b5b4;">toUpperCase</span><span>();
+</span><span>      } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>        </span><span style="color:#bf616a;">hashtag </span><span>= </span><span style="color:#bf616a;">hashtag </span><span>+ </span><span style="color:#bf616a;">str</span><span>[</span><span style="color:#bf616a;">x</span><span>];
+</span><span>      }
+</span><span>    }
+</span><span>  }
+</span><span>  </span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">hashtag</span><span>.length === </span><span style="color:#d08770;">1 </span><span>|| </span><span style="color:#bf616a;">hashtag</span><span>.length &gt; </span><span style="color:#d08770;">140</span><span>) {
+</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#d08770;">false</span><span>;
+</span><span>  }
+</span><span>  </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">hashtag</span><span>;
+</span><span>}
+</span></code></pre>
+
+
+  </div>
+  
+  <div class="section bottom-menu">
+    <hr />
+    <p>
+      
+        
+          <a href="&#x2F;projects">projects</a>
+          &#183;
+        
+          <a href="&#x2F;about">about</a>
+          &#183;
+        
+          <a href="&#x2F;cv">cv</a>
+          &#183;
+        
+      
+      <a href="https:&#x2F;&#x2F;jordan-spencer.com">home</a>
+    </p>
+  </div>
+ 
+  
+
+</div>
+
+  </body>
+</html>

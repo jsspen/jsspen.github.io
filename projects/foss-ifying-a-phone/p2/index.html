@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/fonts.css" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/style.css" />
+    <title>
+      
+    Part 2: F-Droid, Keyboard Libraries, and Choosing a Browser - Jordan Spencer | Software Dev
+
+    </title>
+    
+  </head>
+  <body>
+    
+<div class="wrap">
+  <div class="section" id="title"></div>
+  <div class="section" id="sections">
+    
+  </div>
+  <div class="section" id="content">
+    
+    
+        
+    
+    <h2 id="part-2-f-droid-keyboard-libraries-and-choosing-a-browser">Part 2: F-Droid, Keyboard Libraries, and Choosing a Browser</h2>
+<p>This is Part 2 of an ongoing series detailing my experience dumbing down my phone, taking ownership of my data, and learning a lot about FOSS along the way. NOTE: These are living documents that will surely change with time!</p>
+<p>Previously I explained the <em>why</em> of the whole project plus my experience with GrapheneOS and why I chose it as my new Android OS. Now we'll get into the other tools and apps. First things first, where am I getting the apps?</p>
+<h3 id="the-app-store">The App Store</h3>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/py26ktbj4f6ucabkpt5c.jpg" alt="F-Droid Logo" /></p>
+<p>I don't really <em>need</em> an app store, especially since I'm trying to cut back heavily on my smartphone reliance, but at this stage in my journey where I'm installing and sampling all kinds of things, I've installed the <a href="https://f-droid.org/en/">F-Droid</a> "shop." It's very no-frills and I wish there was a way to sort search results, like by installs, but I really appreciate how proactive it is about letting you know when apps have what it calls "anti-features" (like relying on an upstream non-free/proprietary service).</p>
+<p>While F-Droid will manage updates to anything installed through it's shop, you aren't stuck manually checking and updating things if you go decide to download APK releases directly. <a href="https://github.com/ImranR98/Obtainium">Obtanium</a> is essentially a tracker/updater for managing your APKs from a broad range of sources. At the moment I'm only using it for the QUIK messaging app and a Bluesky client I grabbed off GitHub but I can see replacing the F-Droid shop with it once I've really settled on my app choices. Something on the list to investigate later.</p>
+<h3 id="the-keyboard">The Keyboard</h3>
+<p>Something I hadn't really considered before jumping ship on the stock Pixel OS was that the keyboard I've been using for years is obviously a Google product! I <em>very</em> quickly realized this when presented with the standard Graphene keyboard for the first time.</p>
+<p>I use what Google apparently calls "Glide Typing" which is kind of like a slippery touchscreen version of T9 (if you're old enough to remember that). Having to accurately hit each individual letter one-by-one to type something out on my phone feels slow and downright bad to me but finding a keyboard that supports glide typing wasn't as straightforward as I had hoped.</p>
+<p>I didn't last long with the stock keyboard before installing <a href="https://anysoftkeyboard.github.io/">AnySoftKeyboard</a> which is one of the few FOSS alternative with support for swipe typing. The experience was... OK. It felt slow and it's accuracy left a lot to be desired. I still had to be slow and pretty accurate, so it didn't really feel like much of a change from the stock experience. <a href="https://github.com/florisboard/florisboard">FlorisBoard</a> have also introduced their own implementation but the feedback I read suggested it would be much the same as my experience with AnySoftKeyboard's gesture typing.</p>
+<p>I considered what many others have done: installing Gboard and using Graphene's settings to deny it network access, potentially even going the extra step of using a root firewall like <a href="https://github.com/ukanth/afwall">AFWall</a> (something I plan on looking into later regardless) but I was curious to see if I could do without.</p>
+<p>After reading a <a href="https://github.com/openboard-team/openboard/issues/3">lengthy GitHub discussion</a> at the <a href="https://github.com/openboard-team/openboard">Openboard</a> repo that went into the logistical options and challenges I decided to go with the less-than-ideal option of using <a href="https://github.com/Helium314/openboard">Helium314's Openboard fork</a> with the proprietary Google swipe library (<a href="https://github.com/erkserkserks/openboard/tree/master/app/src/main/jniLibs">libjni_latinimegoogle.so</a>) imported. I've been using it for a few weeks now and though it feels slightly different than the Gboard I'm used to, the difference has been negligible and I'll be sticking with this setup for the foreseeable future.</p>
+<h3 id="the-browser">The Browser</h3>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lnhegh6v6rr6whfe0on8.jpeg" alt="Icons for Vanadium, Mull, and Fennec" /></p>
+<p>While Graphene comes with <a href="https://github.com/GrapheneOS/Vanadium">Vanadium</a>, their own Chromium-based browser, pre-installed I chose to go with <a href="https://github.com/divested-mobile/mull-fenix">Mull</a> as my default browser. There wasn't anything wrong with Vanadium, it's just that I've been using Firefox (and the wonderful <a href="https://ublockorigin.com/">uBlock Origin</a> plugin) on my Linux machine for a little while now and have really grown to prefer it to Chromium-based browsers. In my research I had seen a lot of mentions of Mull and Fennec (the F-Droid version), both based on Firefox but with further hardening and privacy modifications. This detailed browser <a href="https://divestos.org/pages/browsers#fenix-based">comparison chart</a> (produced by the developer of Mull) is what ultimately led to me choosing Mull. It's definitely worth a look at the chart even if you aren't in the market for a new browser!</p>
+<p>This also prompted a change beyond my phone: I've left behind Chrome <em>and</em> Firefox on my Windows and Linux machines in favor of <a href="https://librewolf.net/">Librewolf</a>, a privacy and security-focused Firefox fork for desktops. The experience has been painless and I wish I had just made the switch earlier. I did activate Firefox sync (which is by default disabled in Mull and Librewolf) and have had a smooth experience across my devices. So far so good!</p>
+<p>(to be continued...)</p>
+
+
+  </div>
+  
+  <div class="section bottom-menu">
+    <hr />
+    <p>
+      
+        
+          <a href="&#x2F;projects">projects</a>
+          &#183;
+        
+          <a href="&#x2F;about">about</a>
+          &#183;
+        
+          <a href="&#x2F;cv">cv</a>
+          &#183;
+        
+      
+      <a href="https:&#x2F;&#x2F;jordan-spencer.com">home</a>
+    </p>
+  </div>
+ 
+  
+
+</div>
+
+  </body>
+</html>

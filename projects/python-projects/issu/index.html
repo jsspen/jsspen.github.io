@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/fonts.css" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/style.css" />
+    <title>
+      
+    issu grabber - Jordan Spencer | Software Dev
+
+    </title>
+    
+  </head>
+  <body>
+    
+<div class="wrap">
+  <div class="section" id="title"></div>
+  <div class="section" id="sections">
+    
+  </div>
+  <div class="section" id="content">
+    
+    
+        
+    
+    <h1 id="issuu-grabber">ISSUU Grabber</h1>
+<p>A quick Python script to save a PDF copy of any document hosted by ISSUU</p>
+<h2 id="github-repo">GitHub Repo</h2>
+<p><a href="https://github.com/jsspen/issuu-grabber">ISSU Grabber</a></p>
+<h2 id="basic-usage">Basic usage</h2>
+<ul>
+<li>Clone or download repo</li>
+<li>Open terminal in root directory</li>
+<li>Run the program with <code>python issuu-grabber.py</code></li>
+</ul>
+<h3 id="manual-entry">Manual Entry</h3>
+<p>Provide a single URL with the option to continue as many times as desired</p>
+<ul>
+<li>When prompted enter <code>u</code> for manual entry</li>
+<li>Paste the full ISSUU URL into the terminal</li>
+</ul>
+<h3 id="file-entry">File Entry</h3>
+<p>Simple batch processing for a list of URLs</p>
+<ul>
+<li>When prompted enter <code>f</code> for file input</li>
+<li>Input file should be named <code>input.txt</code></li>
+<li>File should be saved in the app root directory</li>
+<li>File should contain one URL on each line</li>
+</ul>
+<h2 id="source-code">Source Code</h2>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">import </span><span>json
+</span><span style="color:#b48ead;">import </span><span>os
+</span><span style="color:#b48ead;">import </span><span>shutil
+</span><span style="color:#b48ead;">import </span><span>sys
+</span><span style="color:#b48ead;">import </span><span>time
+</span><span>
+</span><span style="color:#b48ead;">import </span><span>img2pdf
+</span><span style="color:#b48ead;">import </span><span>requests
+</span><span style="color:#b48ead;">from </span><span>bs4 </span><span style="color:#b48ead;">import </span><span>BeautifulSoup
+</span><span>
+</span><span>mode = </span><span style="color:#96b5b4;">input</span><span>(&#39;</span><span style="color:#a3be8c;">Single URL (u) or file input (f)? </span><span>&#39;)
+</span><span>keep_going = </span><span style="color:#d08770;">True
+</span><span>input_list = []
+</span><span>proceed = &#39;&#39;
+</span><span>
+</span><span style="color:#b48ead;">while </span><span>keep_going:
+</span><span>    </span><span style="color:#b48ead;">if </span><span>mode == &#39;</span><span style="color:#a3be8c;">u</span><span>&#39;:
+</span><span>        input_list = [</span><span style="color:#96b5b4;">input</span><span>(&#39;</span><span style="color:#a3be8c;">What is the URL? </span><span>&#39;)]
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">elif </span><span>mode == &#39;</span><span style="color:#a3be8c;">f</span><span>&#39;:
+</span><span>        input_file = </span><span style="color:#96b5b4;">open</span><span>(&#39;</span><span style="color:#a3be8c;">input.txt</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">r</span><span>&#39;)
+</span><span>        file_data = input_file.</span><span style="color:#bf616a;">read</span><span>()
+</span><span>        input_list = file_data.</span><span style="color:#bf616a;">split</span><span>(&#39;</span><span style="color:#96b5b4;">\n</span><span>&#39;)
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">for </span><span>url </span><span style="color:#b48ead;">in </span><span>input_list:
+</span><span>        headers = {
+</span><span>            &#39;</span><span style="color:#a3be8c;">User-Agent</span><span>&#39;: &#39;</span><span style="color:#a3be8c;">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) </span><span>&#39;
+</span><span>                          &#39;</span><span style="color:#a3be8c;">Chrome/96.0.4664.110 Safari/537.36</span><span>&#39;,
+</span><span>            &#39;</span><span style="color:#a3be8c;">Accept</span><span>&#39;: &#39;</span><span style="color:#a3be8c;">text/html</span><span>&#39;
+</span><span>        }
+</span><span>        url_response = requests.</span><span style="color:#bf616a;">get</span><span>(url, </span><span style="color:#bf616a;">headers</span><span>=headers)
+</span><span>        </span><span style="color:#b48ead;">if </span><span>url_response.status_code != </span><span style="color:#d08770;">200</span><span>:
+</span><span>            </span><span style="color:#96b5b4;">print</span><span>(&#39;</span><span style="color:#a3be8c;">Failed to fetch webpage</span><span>&#39;)
+</span><span>            </span><span style="color:#65737e;"># Uncomment any/all of the below lines for help troubleshooting fetch failure
+</span><span>            </span><span style="color:#65737e;"># print(&#39;Response Status Code: &#39;, url_response.status_code)
+</span><span>            </span><span style="color:#65737e;"># print(&#39;Response Content: &#39;, url_response.text)
+</span><span>            </span><span style="color:#65737e;"># print(&#39;Final URL after redirects: &#39;, url_response.url)
+</span><span>            </span><span style="color:#65737e;"># print(&#39;Request Headers: &#39;, url_response.request.headers)
+</span><span>        </span><span style="color:#b48ead;">else</span><span>:
+</span><span>            soup = </span><span style="color:#bf616a;">BeautifulSoup</span><span>(url_response.content, &#39;</span><span style="color:#a3be8c;">html.parser</span><span>&#39;)
+</span><span>            initial_data = soup.</span><span style="color:#bf616a;">find</span><span>(&#39;</span><span style="color:#a3be8c;">script</span><span>&#39;, </span><span style="color:#bf616a;">id</span><span>=&#39;</span><span style="color:#a3be8c;">initial-data</span><span>&#39;)
+</span><span>            </span><span style="color:#b48ead;">if </span><span>initial_data is </span><span style="color:#d08770;">None</span><span>:
+</span><span>                </span><span style="color:#96b5b4;">print</span><span>(&#39;</span><span style="color:#a3be8c;">initial-data script tag not found</span><span>&#39;)
+</span><span>            json_data = json.</span><span style="color:#bf616a;">loads</span><span>(initial_data[&#39;</span><span style="color:#a3be8c;">data-json</span><span>&#39;])
+</span><span>            revision_id = json_data[&#39;</span><span style="color:#a3be8c;">initialDocumentData</span><span>&#39;][&#39;</span><span style="color:#a3be8c;">document</span><span>&#39;][&#39;</span><span style="color:#a3be8c;">revisionId</span><span>&#39;]
+</span><span>            publication_id = json_data[&#39;</span><span style="color:#a3be8c;">initialDocumentData</span><span>&#39;][&#39;</span><span style="color:#a3be8c;">document</span><span>&#39;][&#39;</span><span style="color:#a3be8c;">publicationId</span><span>&#39;]
+</span><span>            title = json_data[&#39;</span><span style="color:#a3be8c;">initialDocumentData</span><span>&#39;][&#39;</span><span style="color:#a3be8c;">document</span><span>&#39;][&#39;</span><span style="color:#a3be8c;">title</span><span>&#39;]
+</span><span>            total_pages = </span><span style="color:#bf616a;">int</span><span>(json_data[&#39;</span><span style="color:#a3be8c;">initialDocumentData</span><span>&#39;][&#39;</span><span style="color:#a3be8c;">document</span><span>&#39;][&#39;</span><span style="color:#a3be8c;">pageCount</span><span>&#39;])
+</span><span>            base_url = </span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">https://image.isu.pub/</span><span>{revision_id}</span><span style="color:#a3be8c;">-</span><span>{publication_id}</span><span style="color:#a3be8c;">/jpg/page_</span><span>&#39;
+</span><span>            </span><span style="color:#b48ead;">if </span><span>not os.path.</span><span style="color:#bf616a;">exists</span><span>(title):
+</span><span>                os.</span><span style="color:#bf616a;">makedirs</span><span>(title)
+</span><span>            </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">Processing </span><span>{title}</span><span style="color:#a3be8c;">: </span><span>&#39;, </span><span style="color:#bf616a;">end</span><span>=&#39; &#39;)
+</span><span>            </span><span style="color:#b48ead;">for </span><span>page </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">1</span><span>, total_pages + </span><span style="color:#d08770;">1</span><span>):
+</span><span>                img_response = requests.</span><span style="color:#bf616a;">get</span><span>(base_url + </span><span style="color:#bf616a;">str</span><span>(page) + &#39;</span><span style="color:#a3be8c;">.jpg</span><span>&#39;)
+</span><span>                </span><span style="color:#b48ead;">if </span><span>img_response.status_code == </span><span style="color:#d08770;">200</span><span>:
+</span><span>                    </span><span style="color:#b48ead;">with </span><span style="color:#96b5b4;">open</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;{title}</span><span style="color:#a3be8c;">/</span><span>{page}</span><span style="color:#a3be8c;">.jpg</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">wb</span><span>&#39;) </span><span style="color:#b48ead;">as </span><span>file:
+</span><span>                        file.</span><span style="color:#bf616a;">write</span><span>(img_response.content)
+</span><span>                        </span><span style="color:#b48ead;">if </span><span>page == total_pages:
+</span><span>                            </span><span style="color:#96b5b4;">print</span><span>(&#39;</span><span style="color:#a3be8c;">.</span><span>&#39;)
+</span><span>                        </span><span style="color:#b48ead;">else</span><span>:
+</span><span>                            </span><span style="color:#96b5b4;">print</span><span>(&#39;</span><span style="color:#a3be8c;">.</span><span>&#39;, </span><span style="color:#bf616a;">end</span><span>=&#39; &#39;)
+</span><span>                </span><span style="color:#b48ead;">else</span><span>:
+</span><span>                    </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">failed to download page </span><span>{page}&#39;)
+</span><span>            images = []
+</span><span>            </span><span style="color:#b48ead;">for </span><span>file_name </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">sorted</span><span>(os.</span><span style="color:#bf616a;">listdir</span><span>(title), </span><span style="color:#bf616a;">key</span><span>=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">x</span><span>: </span><span style="color:#bf616a;">int</span><span>(os.path.</span><span style="color:#bf616a;">splitext</span><span>(x)[</span><span style="color:#d08770;">0</span><span>])):
+</span><span>                </span><span style="color:#65737e;"># for file_name in os.listdir(title):
+</span><span>                </span><span style="color:#b48ead;">if </span><span>not file_name.</span><span style="color:#bf616a;">endswith</span><span>(&#39;</span><span style="color:#a3be8c;">.jpg</span><span>&#39;):
+</span><span>                    </span><span style="color:#b48ead;">continue
+</span><span>                img_path = os.path.</span><span style="color:#bf616a;">join</span><span>(title, file_name)
+</span><span>                </span><span style="color:#b48ead;">if </span><span>os.path.</span><span style="color:#bf616a;">isdir</span><span>(img_path):
+</span><span>                    </span><span style="color:#b48ead;">continue
+</span><span>                images.</span><span style="color:#bf616a;">append</span><span>(img_path)
+</span><span>            </span><span style="color:#b48ead;">if </span><span>not os.path.</span><span style="color:#bf616a;">exists</span><span>(&#39;</span><span style="color:#a3be8c;">completed</span><span>&#39;):
+</span><span>                os.</span><span style="color:#bf616a;">makedirs</span><span>(&#39;</span><span style="color:#a3be8c;">completed</span><span>&#39;)
+</span><span>            </span><span style="color:#b48ead;">with </span><span style="color:#96b5b4;">open</span><span>(</span><span style="color:#b48ead;">f</span><span>&#39;</span><span style="color:#a3be8c;">completed/</span><span>{title}</span><span style="color:#a3be8c;">.pdf</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">wb</span><span>&#39;) </span><span style="color:#b48ead;">as </span><span>file:
+</span><span>                file.</span><span style="color:#bf616a;">write</span><span>(img2pdf.</span><span style="color:#bf616a;">convert</span><span>(images))
+</span><span>                </span><span style="color:#b48ead;">try</span><span>:
+</span><span>                    shutil.</span><span style="color:#bf616a;">rmtree</span><span>(title)
+</span><span>                </span><span style="color:#b48ead;">except </span><span>OSError </span><span style="color:#b48ead;">as </span><span>e:
+</span><span>                    </span><span style="color:#96b5b4;">print</span><span>(&#39;</span><span style="color:#a3be8c;">Error: </span><span style="color:#d08770;">%s</span><span style="color:#a3be8c;"> : </span><span style="color:#d08770;">%s</span><span>&#39; % (file, e.strerror))
+</span><span>        </span><span style="color:#b48ead;">if </span><span>mode == &quot;</span><span style="color:#a3be8c;">f</span><span>&quot;:
+</span><span>            keep_going = </span><span style="color:#d08770;">False
+</span><span>        </span><span style="color:#b48ead;">if </span><span>mode == &quot;</span><span style="color:#a3be8c;">u</span><span>&quot;:
+</span><span>            proceed = </span><span style="color:#96b5b4;">input</span><span>(&#39;</span><span style="color:#a3be8c;">Do you have another document to process? (y or n) </span><span>&#39;)
+</span><span>            </span><span style="color:#b48ead;">if </span><span>proceed == &#39;</span><span style="color:#a3be8c;">n</span><span>&#39;:
+</span><span>                keep_going = </span><span style="color:#d08770;">False
+</span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Completed.</span><span>&quot;)
+</span><span>time.</span><span style="color:#bf616a;">sleep</span><span>(</span><span style="color:#d08770;">3</span><span>)  </span><span style="color:#65737e;"># Pause for 3 seconds
+</span><span>sys.</span><span style="color:#bf616a;">exit</span><span>()
+</span></code></pre>
+
+
+  </div>
+  
+  <div class="section bottom-menu">
+    <hr />
+    <p>
+      
+        
+          <a href="&#x2F;projects">projects</a>
+          &#183;
+        
+          <a href="&#x2F;about">about</a>
+          &#183;
+        
+          <a href="&#x2F;cv">cv</a>
+          &#183;
+        
+      
+      <a href="https:&#x2F;&#x2F;jordan-spencer.com">home</a>
+    </p>
+  </div>
+ 
+  
+
+</div>
+
+  </body>
+</html>

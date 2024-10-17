@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/fonts.css" />
+    <link rel="stylesheet" href="https://jordan-spencer.com/style.css" />
+    <title>
+      
+    directionsReduction - Jordan Spencer | Software Dev
+
+    </title>
+    
+  </head>
+  <body>
+    
+<div class="wrap">
+  <div class="section" id="title"></div>
+  <div class="section" id="sections">
+    
+  </div>
+  <div class="section" id="content">
+    
+    
+        
+    
+    <p><strong>Source:</strong> <a href="https://www.codewars.com/kata/550f22f4d758534c1100025a">Codewars</a></p>
+<p><strong>The Challenge:</strong> Write a function dirReduc which will take an array of strings and returns an array of strings with the needless
+directions removed (<code>W&lt;-&gt;E</code> or <code>S&lt;-&gt;N</code> side by side).</p>
+<p>In <code>["NORTH", "SOUTH", "EAST", "WEST"]</code>, the direction <code>"NORTH" + "SOUTH"</code> is going north and coming back right away. The path becomes <code>["EAST", "WEST"]</code>, now <code>"EAST"</code> and <code>"WEST"</code> annihilate each other, therefore, the final result is <code>[]</code>. In <code>["NORTH", "EAST", "WEST", "SOUTH", "WEST", "WEST"]</code>, <code>"NORTH"</code> and <code>"SOUTH"</code> are not directly opposite but they become directly opposite after the reduction of <code>"EAST"</code> and <code>"WEST"</code> so the whole path is reducible to <code>["WEST", "WEST"]</code>.</p>
+<p>Not all paths can be made simpler. The path <code>["NORTH", "WEST", "SOUTH", "EAST"]</code> is not reducible. <code>"NORTH"</code> and <code>"WEST"</code>, <code>"WEST"</code> and <code>"SOUTH"</code>, <code>"SOUTH"</code> and <code>"EAST"</code> are not directly opposite of each other and can't become such. Hence the result path is itself: <code>["NORTH", "WEST", "SOUTH", "EAST"]</code>.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">dirReduc</span><span>(</span><span style="color:#bf616a;">arr</span><span>) {
+</span><span>  </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">x </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>  </span><span style="color:#b48ead;">while </span><span>(</span><span style="color:#bf616a;">x </span><span>&lt; </span><span style="color:#bf616a;">arr</span><span>.length &amp;&amp; </span><span style="color:#bf616a;">arr</span><span>.length &gt; </span><span style="color:#d08770;">1</span><span>) {
+</span><span>    </span><span style="color:#b48ead;">if </span><span>(
+</span><span>      (</span><span style="color:#bf616a;">arr</span><span>[</span><span style="color:#bf616a;">x</span><span>] === &quot;</span><span style="color:#a3be8c;">NORTH</span><span>&quot; &amp;&amp; </span><span style="color:#bf616a;">arr</span><span>[</span><span style="color:#bf616a;">x </span><span>+ </span><span style="color:#d08770;">1</span><span>] === &quot;</span><span style="color:#a3be8c;">SOUTH</span><span>&quot;) ||
+</span><span>      (</span><span style="color:#bf616a;">arr</span><span>[</span><span style="color:#bf616a;">x</span><span>] === &quot;</span><span style="color:#a3be8c;">SOUTH</span><span>&quot; &amp;&amp; </span><span style="color:#bf616a;">arr</span><span>[</span><span style="color:#bf616a;">x </span><span>+ </span><span style="color:#d08770;">1</span><span>] === &quot;</span><span style="color:#a3be8c;">NORTH</span><span>&quot;) ||
+</span><span>      (</span><span style="color:#bf616a;">arr</span><span>[</span><span style="color:#bf616a;">x</span><span>] === &quot;</span><span style="color:#a3be8c;">WEST</span><span>&quot; &amp;&amp; </span><span style="color:#bf616a;">arr</span><span>[</span><span style="color:#bf616a;">x </span><span>+ </span><span style="color:#d08770;">1</span><span>] === &quot;</span><span style="color:#a3be8c;">EAST</span><span>&quot;) ||
+</span><span>      (</span><span style="color:#bf616a;">arr</span><span>[</span><span style="color:#bf616a;">x</span><span>] === &quot;</span><span style="color:#a3be8c;">EAST</span><span>&quot; &amp;&amp; </span><span style="color:#bf616a;">arr</span><span>[</span><span style="color:#bf616a;">x </span><span>+ </span><span style="color:#d08770;">1</span><span>] === &quot;</span><span style="color:#a3be8c;">WEST</span><span>&quot;)
+</span><span>    ) {
+</span><span>      </span><span style="color:#bf616a;">arr</span><span>.</span><span style="color:#96b5b4;">splice</span><span>(</span><span style="color:#bf616a;">x</span><span>, </span><span style="color:#d08770;">2</span><span>);
+</span><span>      </span><span style="color:#bf616a;">x </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>    } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>      </span><span style="color:#bf616a;">x</span><span>++;
+</span><span>    }
+</span><span>  }
+</span><span>  </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">arr</span><span>;
+</span><span>}
+</span></code></pre>
+
+
+  </div>
+  
+  <div class="section bottom-menu">
+    <hr />
+    <p>
+      
+        
+          <a href="&#x2F;projects">projects</a>
+          &#183;
+        
+          <a href="&#x2F;about">about</a>
+          &#183;
+        
+          <a href="&#x2F;cv">cv</a>
+          &#183;
+        
+      
+      <a href="https:&#x2F;&#x2F;jordan-spencer.com">home</a>
+    </p>
+  </div>
+ 
+  
+
+</div>
+
+  </body>
+</html>
