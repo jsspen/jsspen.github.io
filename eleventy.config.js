@@ -7,7 +7,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginPDFEmbed, {
-    key: "cf2dfbd314014bb2b96663e1e5ac6198",
+    // www subdomain key: "cf2dfbd314014bb2b96663e1e5ac6198",
+    key: "3545089f15d94af3a4661706590b5591",
   });
 
   return {
