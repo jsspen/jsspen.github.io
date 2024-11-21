@@ -1,0 +1,11 @@
+---
+layout: base.njk
+---
+
+<article>
+    {{content | safe}}
+</article>
+<nav>
+    {{ collections.all | eleventyNavigation(eleventyNavigation.key) | eleventyNavigationToHtml | safe }}
+</nav>
+<br/>
