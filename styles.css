@@ -1,0 +1,132 @@
+* {
+  font-family: "Roboto Flex", sans-serif;
+  hyphens: auto;
+}
+
+body {
+  font-weight: 300;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  color: #fff;
+  opacity: 0.8;
+  background-color: #445060;
+}
+
+.float {
+  float: left;
+  margin: 0 1rem 1rem 0;
+}
+
+.icon {
+  max-width: 2rem;
+  padding: 0rem 1rem 0 0;
+}
+
+header {
+  padding: 0rem 0rem 1rem;
+}
+
+header a {
+  font-variation-settings: "wdth" 125;
+}
+
+a {
+  font-weight: 500;
+}
+
+a:link {
+  color: #80858b;
+}
+a:visited {
+  color: #abadb0;
+}
+
+h1 {
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 1.5px;
+  font-variation-settings: "wdth" 125;
+  margin-bottom: 0;
+}
+
+.section-landing {
+  margin-top: 1rem;
+}
+
+.section-heading {
+  font-size: 2rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 0;
+}
+
+.splash {
+  font-weight: 300;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 2rem;
+  display: block;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 4rem 2rem 3rem;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.splash p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 0.8;
+}
+
+.splash-subs {
+  font-size: 1rem;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.center {
+  text-align: center;
+  padding: 1rem;
+}
+
+span a {
+  font-weight: 600;
+}
+
+.align-right {
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .body {
+    padding: 0 6rem;
+  }
+  .splash {
+    font-size: 3rem;
+  }
+  .splash-subs {
+    font-size: 2rem;
+  }
+  .icon {
+    max-width: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .body {
+    padding: 0 12rem;
+  }
+  .splash {
+    font-size: 4rem;
+    padding: 4rem 2rem 5rem;
+  }
+}
