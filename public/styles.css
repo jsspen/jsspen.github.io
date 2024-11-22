@@ -55,6 +55,16 @@ h1 {
   margin-bottom: 0;
 }
 
+.lightweight {
+  font-weight: 100;
+}
+
+.post-date {
+  margin-top: 0.25rem;
+  font-weight: 100;
+  font-size: 1rem;
+}
+
 .section-landing {
   margin-top: 1rem;
 }

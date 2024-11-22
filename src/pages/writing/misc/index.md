@@ -5,5 +5,6 @@ eleventyNavigation:
     key: Miscellany
     parent: Writing
 ---
-
-This is where other assorted writing lives. Like a blog.
+# Miscellany
+You’ve made a <i>blog</i> … Clever boy! Next: flushing.<br>
+&mdash; Don Paterson, <i>Best Thought, Worst Thought</i>

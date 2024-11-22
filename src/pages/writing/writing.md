@@ -11,8 +11,8 @@ eleventyNavigation:
 Documentation of my experience building and managing a home server
 
 <span class="section-heading"><a href="/pages/writing/fossifying/">FOSSifying My Phone</a></span><br>
-Series on my ongoing project migrating to only using Free Open Source Softwear (FOSS) on my smartphone
+A series on only using Free Open Source Softwear (FOSS) on a smartphone
 
 <span class="section-heading"><a href="/pages/writing/misc/">Miscellany</a></span><br>
-Short pieces on a variety of topics
+Short pieces on a variety of topics (or "A Blog")
 </div>

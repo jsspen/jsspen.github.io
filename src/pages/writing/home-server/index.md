@@ -5,5 +5,5 @@ eleventyNavigation:
     key: My Home Server
     parent: Writing
 ---
-
-This is where writing about my home server lives
+# My Home Server
+Documentation of my experience building and managing a home server 

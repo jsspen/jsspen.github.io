@@ -5,5 +5,5 @@ eleventyNavigation:
     key: FOSSifying My Phone
     parent: Writing
 ---
-
-This is where writing about my project to FOSSifying my phone lives
+# FOSSifying My Phone
+A series on my ongoing project of migrating to only using Free Open Source Softwear (FOSS) on my smartphone
