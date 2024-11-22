@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="/styles.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="/styles.css">
+    </noscript>
+    <link rel="stylesheet" href="/prism-vsc-dark-plus.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap" rel="stylesheet">
+    <title>Local Notifications</title>
+  </head>
+  <body>
+    <h1>jordan spencer</h1>
+    <header>
+      <nav><a href="/pages/about">about</a> | <a href="/pages/projects">projects</a> | <a href="/pages/writing">writing</a> | <a href="/pages/resume">cv</a></nav>
+    </header>
+    
+<article>
+    <h1>My Home Server</h1>
+<h2>Local Notifications</h2>
+<p>While I've done a lot of work to set up various monitoring services, those aren't all that useful when I'm away from my computer. One thing that had been on my to-do list for a while was setting up local notifications. In the past I have used Telegram bots (I've written more about that <a href="">here</a>), and though those worked well enough I just didn't love relying on an outside service like Telegram, especially with more sensitive notifications and alerts.</p>
+<h3>ntfy</h3>
+<p>One name I had seen frequently while researching was <a href="https://github.com/binwiederhier/ntfy">ntfy</a>. While it can be nice to have software with all kinds of bells &amp; whistles, I was drawn to the simplicity of ntfy. It's a basic HTTP-based pub-sub service that can be easily plugged in to all manner of applications. Importantly for my needs and interests it's fully open source, easily self-hostable, and has an open-source Android app (bonus points for offering the app via F-Droid!).</p>
+<p>While ntfy is offered as a Docker image I have been trying to use LXC's when possible, so I threw one together with the help of a tteck script and dug in. Upon opening the IP:Port in my browser I was immediately greeted with a &quot;notifications not supported&quot; message! No HTTP allowed! At this point in my experience this is a trivial problem (I've written more about that <a href="">here</a>) so I ran through my ususal process...</p>
+<p>First I popped over to Nginx Proxy Manager and created a new proxy host for a new ntfy subdomain. I set the IP and port to forward, assigned it my standard domain SSL certificate (a Let's Encrypt cert using DNS Challenge 01), flipped on the &quot;force SSL&quot; and &quot;HTTP/2 support&quot; toggles, and saved it. Then its over to my Pi-Hole instance to create a local DNS record pointing the ntfy subdomain to my NPM IP.</p>
+<p>Now for a little editing of the ntfy config (located at <code>/etc/ntfy/server.yml</code>). I needed to set the <code>base-url</code> to the new HTTPS address I just set up and to set <code>behind-proxy</code> to <code>true</code> but I also wanted to make a few other changes, namely setting up notification caching. At the moment I'm not exposing <em>any</em> of my services to the open internet, so there are likely to be some times where I'm inaccessible (maybe I'm out of the house and forget to turn on Wireguard) and I certainly don't want to miss out on any notifications. I'm also curious about some of the more extravagent notification options that ntfy supports so I set up a cache directory for attachments, too.</p>
+<pre><code>base-url: &quot;https://ntfy-subdomain.maindomain.xyz&quot;
+cache-file: &quot;/var/cache/ntfy/cache.db&quot;
+cache-duration: &quot;12h&quot;
+behind-proxy: true
+attachment-cache-dir: &quot;/var/cache/ntfy/attachments&quot;
+attachment-total-size-limit: &quot;500M&quot;
+attachment-file-size-limit: &quot;100M&quot;
+attachment-expiry-duration: &quot;24h&quot;
+</code></pre>
+<p>I save my config, reboot the LXC, and head to the new address in my browser. No more error message! I open the app on my phone and subscribe to a new topic, which is as simple as making one up! I enter <code>test</code> and check the box for &quot;use another server&quot; (the default is the public ntfy server) and I enter mine. Back in my browser I click &quot;publish notification,&quot; enter <code>test</code> as the topic name, and enter a little bit of nonsense in the title and message fields. A click on send and <em>ding</em> there it is on my phone. Simple!</p>
+<p>I did notice that the app was telling me that it would be better if I connected via websocket. I tapped &quot;enable&quot; and my <code>test</code> subscription fell into the pit of endless &quot;reconnecting...&quot; so I was definitely going to have to do a little more than just click enable! Turns out, not much more: NPM has a toggle switch for &quot;Websockets Support&quot; when configuring a proxy host. Now I was back in business - though with a new note jotted down: learn about websockets.</p>
+<p><a href="/projects/a-homelab/"><b>Back to Homelab Project Page</b></a></p>
+
+</article>
+<nav>
+    
+</nav>
+<br/>
+  </body>
+</html>
