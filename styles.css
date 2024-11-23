@@ -47,7 +47,9 @@ a:visited {
   color: #abadb0;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   font-weight: 300;
   color: #fff;
   letter-spacing: 1.5px;
@@ -99,6 +101,10 @@ h1 {
   font-size: 1rem;
 }
 
+.splash-subs-sub {
+  font-size: 1.5rem;
+}
+
 .semibold {
   font-weight: 600;
 }
@@ -114,6 +120,10 @@ span a {
 
 .align-right {
   text-align: right;
+}
+
+.half {
+  max-width: 50%;
 }
 
 @media (min-width: 768px) {
