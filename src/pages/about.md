@@ -2,7 +2,7 @@
 layout: base.njk
 ---
 
-<img class="float" src="/headshot.jpg"> 
+<img class="float" src="/imgs/headshot.jpg"> 
 In the Spring of 2020 I was working in the curatorial office of a beloved art museum and by the end of the year I was gearing up to embark on a new journey as a junior developer at a fast-growing startup. The onset of a global pandemic presented me with an unexpected opportunity to pivot, leading me to plunge headfirst into the realm of programming.
 
 I enrolled in a rigorous full stack coding bootcamp and graduated with my first job offers already in hand. Since then, I’ve accumulated substantial on-the-job experience in both front-end and back-end development, with a primary focus on JavaScript frameworks, APIs, and cloud services. These skills have been complemented by the foundational knowledge I acquired during my bootcamp training.
