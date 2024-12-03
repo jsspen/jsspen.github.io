@@ -126,6 +126,10 @@ span a {
   max-width: 50%;
 }
 
+.album-grid {
+  max-width: 250px;
+}
+
 @media (min-width: 768px) {
   .body {
     padding: 0 6rem;
