@@ -9,13 +9,19 @@ eleventyNavigation:
 # Trying to Run a Local LLM
 <div class="post-date">2024-11-13</div>
 
-I far from being an AI evangelist so when building my server optimizing it for running LLMs was not on my priority list, however, I'm always curious about what I can get away with doing completely "in house" and .
+I far from being an AI evangelist so when building my server optimizing it for running LLMs was not on my priority list... but as navigating the top layer of the internet has become increasingly difficult, I have found myself turning to GPT
+
+however, I'm always curious about what I can get away with doing completely "in house" and .
+
+<img src="/imgs/openweb-ui.png" width="15%" class="float">
 
 I noticed there was a Proxmox <a href="https://community-scripts.github.io/ProxmoxVE/scripts?id=openwebui">helper script</a> (<a href="https://github.com/community-scripts/ProxmoxVE/discussions/237">RIP tteck</a>) for creating an Open WebUI LXC, so I figured I might as well check it out. I installed Ollama in the container and started poking around. The first thing I had (wanted) to do was disable multi-user support, which is on by default in Open WebUI. This is something that so far I have never had a need for and even with a trusty password manager auto-filling things, it's still annoying to have to login to something (which is only accessible on my LAN) when I want to use it. One thing that can be a little bit troublesome is figuring out how to change things like environment variables when using one of the helper scripts to install the LXC.
 
 The first thing I always do is just run a `systemctl status` command and take a look at what services are running, what files they're running, and what commands/flags it's using to run them. I found the `.env` file and added the necessary line to turn off logins: `WEBUI_AUTH=False`. I restarted the service and checked out the dashboard.
 
 I discovered that though I had installed Ollama alongside Open WebUI, I didn't get any 'default' model or anything like that with it. There's a nice interface in the Open WebUI settings that allows you to enter the name and tag of a model you want to use and it'll handle pulling it in. It linked to the Ollama models directory. I assumed a small model would be pretty large so I had allocated 50gigs to the container... and then I saw that the model that performs at a GPT-4o level (<a href="https://ollama.com/library/llama3.1">llama3.1</a>:420B) was about a quarter TB. I knew I wasn't going to do all <i>that</i> but I shut down the container and allocated another 50GB to it before I bothered moving forward. I browsed around and tried to make a sensible choice. I grabbed the two smaller models of llama3.1 (8B and 70B) and I grabbed <a href="https://ollama.com/library/mistral">mistral</a>:7b (just because it was the placeholder text in the pull field).
+
+<img src="/imgs/ollama.png" width="15%" class="float-right">
 
 I decided to start by testing the largest and move down to smaller depending on the results. It was easier to determine than I expected because I couldn't get <i>any</i> output from either of the llama3.1 models or mistral. All three models threw me a 500 error. A little digging on GitHub points to this likely being an issue of power/resources being inadequate for the model you're attempting to use.
 
