@@ -1,13 +1,12 @@
 ---
-layout: page.njk
-date: 2024-12-31
+layout: simple.njk
+title: Favorite Records of 2024
 eleventyNavigation:
-    key: 2024-12-31 &mdash; Favorite Records of 2024
-    parent: Miscellany
+    key: Favorite Records of 2024
+    parent: The Garden
 ---
 
 # Favorite Records of 2024
-<div class="post-date">2024-12-31</div>
 
 UNDER CONSTRUCTION!
 

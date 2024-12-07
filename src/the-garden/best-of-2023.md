@@ -1,16 +1,16 @@
 ---
-layout: page.njk
-date: 2023-12-31
+layout: simple.njk
+title: Favorite Records of 2023
 eleventyNavigation:
-    key: 2023-12-31 &mdash; Favorite Records of 2023
-    parent: Miscellany
+    key: Favorite Records of 2023
+    parent: The Garden
 ---
 
 # Favorite Records of 2023
-<div class="post-date">2023-12-31</div>
 
 <br>
 <div class="album-grid">
+
 <img src="/imgs/best-of-2023/Angeles-Rojas.jpg"/><br />
 <a href="https://sawyereditions.bandcamp.com/album/breathe-into-the-forest-into-the-bird-into-the-song">
 Ángeles Rojas "breath into the forest, into the bird, into the song"</a><br>
