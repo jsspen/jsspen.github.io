@@ -4,6 +4,8 @@ title: Jordan Spencer | Other Projects
 metaDescription: Jordan Spencer's Personal Page
 ---
 
+<span class="splash-subs-sub"><a href="/the-garden">:seedling:</a></span>
+
 <div class="half">
 
 # Published Criticism & Analysis

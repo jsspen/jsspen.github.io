@@ -22,28 +22,28 @@ With AI Employees Called Artisans"
 "We’re Spearheading the<br>
 Next Industrial Revolution"
 
-1. Create A Campaign
+1. **Create A Campaign**<br>
 With campaigns, you decide who Ava targets, what she's pitching, and what messaging & language she targets them with.
-2. Ava Finds You Leads
+2. **Ava Finds You Leads**<br>
 Ava identifies leads that match your targeting criteria with her international B2B database that has over 300M contacts in over 200 countries.
-3. Ava Researches Leads
+3. **Ava Researches Leads**<br>
 Ava scrapes the web and her database for relevant intent signals, such as fundraising announcements, Google searches, and hiring news.
-4. Ava Ghostwrites Hyper-Personalized Emails
+4. **Ava Ghostwrites Hyper-Personalized Emails**<br>
 Using our Personalization Waterfall, Ava identifies the optimal personalization approach for each lead, referencing social media posts, website visits, and much more.
 
 "A Database of Over 300M+ B2B Contacts"
 
 Carousel of Customers:
-- [Rho](https://rhonutrition.com/)
-- [Ascent](https://www.ascent.io/)
-- [CPower](https://cpowerenergy.com/)
-- [SumUp](https://www.sumup.com/en-us/)
-- [ModComms](https://modcommslimited.com/)
-- [ArchiLabs](https://www.archilabs.ai/)
-- [Exubrancy](https://www.exubrancy.com/)
-- [BioAccess](https://www.bioaccess.com/)
-- [DayZero](https://www.ondayzero.com/)
-- [CookUnity](https://www.cookunity.com/)
+- [Rho](https://rhonutrition.com/) sells a variety of "Liquid Vitamins"
+- [Ascent](https://www.ascent.io/) "data, software & cloud business that specialises in AI & advanced analytics"
+- [CPower](https://cpowerenergy.com/) "Leading the Charge in Virtual Power Plants"
+- [SumUp](https://www.sumup.com/en-us/) "Smart tools to grow your business" (POS, card readers, etc.)
+- [ModComms](https://modcommslimited.com/) "a boutique marketing agency based in London, UK"
+- [ArchiLabs](https://www.archilabs.ai/) "AI Copilot for Architects"
+- [Exubrancy](https://www.exubrancy.com/) "specialize in designing and managing wellness programs for leading companies across the US" & "virtual and on-site meditation sessions, fitness classes, chair massages, team building activities and educational workshops foster connectivity and wellbeing"
+- [bioaccess](https://www.bioaccessla.com/) a "contract research organization (CRO) that helps Medtech companies conduct cost-effective and efficient clinical trials in Latin America"
+- [DayZero](https://www.ondayzero.com/) "E-commerce Accounting Software + Service"
+- [CookUnity](https://www.cookunity.com/) "Award-Winning Chefs. Hundreds of Meals delivered to you."
 
 Carousel of Backers:
 - [Soma Capital](https://somacap.com/)

@@ -1,5 +1,5 @@
 ---
-layout: simple.njk
+layout: simple-subsection.njk
 title: The Dark Forest Theory of the Internet
 eleventyNavigation:
     key: The Dark Forest Theory of the Internet
@@ -10,49 +10,121 @@ eleventyNavigation:
 
 [The Dark Forest Anthology of the Internet](https://www.ribbonfarm.com/2024/04/16/the-dark-forest-anthology-of-the-internet/) (Venkatesh Rao, Ribbonfarm, 2024/04/16)
 
-[The Metalanguage of the Internet](https://lessfoolish.substack.com/p/the-metalanguage-of-the-internet) (Peter Limberg, Less Foolish, 2024/02/22)
+## The Book
+"_The Dark Forest Anthology of the Internet_ is a 208-page book that documents five tumultuous years when we learned how to live, create, and conspire on an increasingly adversarial internet.
 
-[Caroline Busta](https://carolinebusta.github.io/): Berlin-based writer and editor
-- co-founder of New Models (est. 2018), a media channel and community addressing the emergent effects of networked technology on culture
+The original “Dark Forest Theory of the Internet” essay was published by Yancey Strickler in a private newsletter sent to 500 readers. The post struck a chord and became widely shared, with hundreds of thousands of readers in the following weeks. The concept of the Dark Forest captured a feeling and sense of danger online that an increasing number of people shared.
+
+In the years following, some of the most influential voices on the web and in culture built on, argued with, and expanded the original Dark Forest concept. "The Dark Forest Anthology of the Internet" brings those disparate pieces together into a canon of thought that defines a specific era of the internet.
+
+_The Dark Forest Anthology of the Internet_ is a 208-page book that documents five tumultuous years when we learned how to live, create, and conspire on an increasingly adversarial internet.
+
+The original “Dark Forest Theory of the Internet” essay was published by Yancey Strickler in a private newsletter sent to 500 readers. The post struck a chord and became widely shared, with hundreds of thousands of readers in the following weeks. The concept of the Dark Forest captured a feeling and sense of danger online that an increasing number of people shared.
+
+In the years following, some of the most influential voices on the web and in culture built on, argued with, and expanded the original Dark Forest concept. "The Dark Forest Anthology of the Internet" brings those disparate pieces together into a canon of thought that defines a specific era of the internet."
+
+### The Contents
+- [The Dark Forest Theory of the Internet](https://ystrickler.medium.com/the-dark-forest-theory-of-the-internet-7dc3e68a7cb1) by [Yancey Strickler](https://substack.com/@ideaspace)
+- [The Extended Internet Universe](https://studio.ribbonfarm.com/p/the-extended-internet-universe) by [Venkatesh Rao](https://substack.com/@contraptions)
+- [The Dark Forest and Cozy Web](https://maggieappleton.com/cozy-web) by [Maggie Appleton](https://substack.com/@maggieappleton)
+- [Chapel Perilous](https://freedium.cfd/https://thestoa.medium.com/chapel-perilous-a3ee3593bf48) by [Peter Limberg](https://substack.com/@peterlimberg) and [Rebecca Fox](https://substack.com/@rebeccafox)
+- We Need New Platforms to Tell New Stories by [Joshua Citarella](https://substack.com/@joshuacitarella)
+- Proof of Vibes by Leith Benkhedda
+- Moving Castles by Arthur Röing Baer and GNV908
+- [The internet didn’t kill counterculture; you just won’t find it on Instagram](https://www.documentjournal.com/2021/01/the-internet-didnt-kill-counterculture-you-just-wont-find-it-on-instagram/) by [Caroline Busta](https://carolinebusta.github.io/)
+- [The Expanding Dark Forest and Generative AI](https://maggieappleton.com/ai-dark-forest) by Maggie Appleton
+- [Holographic Meda](https://outland.art/new-models-holographic-media/) by [Caroline Busta](https://carolinebusta.github.io/) and [LIL INTERNET](https://substack.com/@lilinternet)
+- [The Post Individual](https://www.ystrickler.com/thepostindividual/) by [Yancey Strickler](https://substack.com/@ideaspace)
+
+Available to [purchase](https://darkforest.metalabel.com/dfa2?variantId=1) through [Metalabel](https://open.substack.com/pub/metalabel)
+
+### Publication "Notes"
+Links/quotes presented alongside the book on its Metalabel purchase ("collect") page
+- [VIDEO: Joshua Citarella gives a tour of the Dark Forest Anthology of the Internet](https://www.youtube.com/watch?v=aDCIx-KPubs)
+- ["The instant nature of electric-information movement is decentralizing — rather than enlarging — the family of man into a new state of multitudinous tribal existences" — Marshall McLuhan](https://x.com/aaronzlewis/status/1199443103687618561?s=20)
+- "The disintegration of the Big Tech-dominated 2010s internet is creating a more balkanized social web experience... where people turn away from big, open mega-platforms in favor of more private or niche digital spaces, from nonpublic Slack channels to invite-only WeChat groups or special-interest podcasts." — Wired
+- [VIDEO: Caroline Busta on CLEARNET vs DARK FORESTS with UCLA Design Media Arts](https://www.youtube.com/watch?v=1iZiu9tZ290)
+- "The fear of content going viral, of an idea being misinterpreted or of losing control over a photo has led many to seek refuge in more closed circles." — El Pais
+- [VIDEO: Counterculture is not dead, it's just sleeping in a Dark Forest — Caroline Busta and Peter Limberg at The Stoa](https://www.youtube.com/watch?v=qNXb0djk65k)
+- "The universe is a dark forest. Every civilization is an armed hunter stalking through the trees like a ghost, gently pushing aside branches that block the path and trying to tread without sound... The hunter has to be careful, because everywhere in the forest are stealthy hunters like him. If he finds other life — another hunter, an angel or a demon, a delicate infant or tottering old man, a fairy or a demigod — there’s only one thing he can do: open fire and eliminate them... This is the picture of cosmic civilization.’” — Liu Cixin, "The Dark Forest"
+- [The Metalanguage of the Internet](https://lessfoolish.substack.com/p/the-metalanguage-of-the-internet), planted in the garden [here](../metalanguage)
+
+## The Players
+"This anthology features the who’s who of intellectual hipsters providing meta takes on the internet" - [Peter Limberg](https://lessfoolish.substack.com/p/the-metalanguage-of-the-internet)
+
+- [Yancey Strickler](https://substack.com/@ideaspace)
+  - co-founder of Kickstarter
+  - co-founder of [Metalabel](https://www.metalabel.com/)
+
+
+- [Venkatesh Rao](https://substack.com/@contraptions)
+  - Ribbonfarm
+
+
+- [Joshua Citarella](https://substack.com/@joshuacitarella)
+  - Artist and internet culture writer.
+  - Author of [*Politigram & the Post-left*](https://joshuacitarella.metalabel.com/release-h2er)
+  - Founder of [Do Not Research](https://donotresearch.substack.com/).
+  - Doomscroll
+
+
+- [Caroline Busta](https://carolinebusta.github.io/): Berlin-based writer and editor
+  - co-founder of New Models (est. 2018), a media channel and community addressing the emergent effects of networked technology on culture
   - [The New Models Webdex / CodexY2K20 Glossary Terms](https://webdex-y2k20.newmodels.io/)
-- editor-in-chief of the Berlin-based critical art journal Texte zur Kunst (2014-17)
-- associate editor at Artforum magazine (2008-14) in New York.
+  - editor-in-chief of the Berlin-based critical art journal Texte zur Kunst (2014-17)
+  - associate editor at Artforum magazine (2008-14) in New York.
 
-[Trust](https://trust.support/): a community & workspace in Berlin
-- "Trust is a network of utopian conspirators, a sandbox for their creative, technical and critical projects, and a site of experimentation for new ways of learning together"
-- currently maintained by Arthur Röing Baer, Calum Bowden, Jovana Maksic, Lina Martin-Chan & Leïth Benkhedda
-- standard monthly subscription support for access to a private Discord
-- shares space with the [Cybernetics Library](https://library.trust.support/)
-- hosts 0xSalon meetings and the 0xSalon Research Residency Program (2021/2022, 2023, 2024)
-[0xSalon](https://0xsalon.pubpub.org/), an event/discussion series around art/tech, dense channel on [Are.na](https://www.are.na/0x-salon/channels)
-- follow [Chatham House Rule](https://en.wikipedia.org/wiki/Chatham_House_Rule): "anyone who comes to a meeting is free to use information from the discussion, but is not allowed to reveal who made any particular comment"
 
-2024 0xSalon residents:
-- [Alessandro Y. Longo](https://reincantamento.xyz/), a Berlin-based writer/researcher
-  - "research is channeled through the collective body of [REINCANTAMENTO]((https://reincantamento.xyz/)), an independent collective of researchers, philosophers, and designers exploring the entanglement between technology and magic."
-- [Sammie Veeler](https://veeler.biz/), an LA-based artist
-  - founder of [New Art City](https://newart.city/) a "virtual gallery & exhibition toolkit for digital art" and the Virtual Access Lab "non-profit research unit" within it (in collaboration with [Gray Area](https://grayarea.org/), a San Francisco-based nonprofit cultural incubator)
-    - It seems the Virtual Access Lab is an ongoing project to research and test the infrastructure of New Art City for better accessibility in collaboration with an "Accessibility Panel"
-      - panelist [Andy Slater](https://www.thisisandyslater.net/), "a blind Chicago-based media artist, writer, performer, and disability advocate/loudmouth"
-        - the phonology of the blind body, spatial audio for extended reality, digital scent design
-  - a current incubator member at [New Inc.](https://www.newmuseum.org/new-inc/meet-newinc/) (a "museum-led cultural incubator" from the New Museum) in the "Y10 Extended Realities track" (can't find any info on what exactly that is...)
-  - a 2024 [Eyebeam Democracy Machine](https://eyebeam.org/program/the-democracy-machine/) fellow.
-    - "*The Democracy Machine* is our radical experiment created to unlock artist-led invention in the areas of self-governance, technology, and democracy. The fellowship takes place against an ongoing transformation at Eyebeam and builds on Rapid Response for a Better Digital Future, a fast moving initiative created early in the pandemic so that artists could come together and explore the dark frontier of power that commodifies personal information at the expense of democracy and freedom."
-  - has received project support from [Mirror](https://mirrorarchive.net/), an artist-focused public archive, part of the [UCLA Arts Software Studio](https://github.com/uclaconditional)
-    - led by Casey Reas, Lauren Lee McCarthy, and Chandler McWilliams
-    - "Our goal is to collect and store documentation of artists and artworks from the widest possible social, cultural, and geographic areas. This information is public and we welcome all contributions. We aim to include documentation of software and website-based art that has already or risks disappearing due to format obsolescence and the fragile nature of digital media. We also aim to increase access to artists and artworks that have been overlooked by institutions and/or ignored through systemic racism and other forms of social marginalization."
+- [LIL INTERNET](https://substack.com/@lilinternet)
 
-0xSalon page is hosted on/built with the [PubPub Platform](https://www.knowledgefutures.org/pubpub/): "[Open-source](https://github.com/pubpub/platform) technology for creating full-stack knowledge applications for communities of all types."
-- "Experiential journals that feel like interactive exhibits. Impact repositories that steward grant proposals from submission to triage to publication. Preprint servers that seamlessly solicit and display structured review. If you can dream it, we can help you build it with PubPub Platform."
 
-[Moving Castles on Are.na](https://www.are.na/moving-castles/channels)
+- [Maggie Appleton](https://substack.com/@maggieappleton)
 
+
+- [Rebecca Fox](https://substack.com/@rebeccafox)
+
+
+- [Peter Limberg](https://substack.com/@peterlimberg)
+  - contributed a piece (with Rebecca Fox) to the anthology titled “Chapel Perilous,” a figurative retelling of the "dark forest" that is [The Stoa](https://www.youtube.com/@thestoa/videos)
+  - The Stoa: [The Memetic Tribes of Culture War 2.0](https://freedium.cfd/https://medium.com/s/world-wide-wtf/memetic-tribes-and-culture-war-2-0-14705c43f6bb) (Peter Limberg & Conor Barnes, September 14, 2018)
+
+
+- [Arthur Röing Baer](https://x.com/ArthurRoingBaer)
+  - Moving Castles
+  - co-founder of Trust
+  - Writings for [FOAM](https://medium.com/@arthurroingbaer), which is now [here](https://mirror.xyz/foamspace.eth) and seems to be some blockchain GPS thing?
+
+
+- GVN908 (aka Alex Declino): a world designer with a background in cinema and procedural storytelling.
+  - "GVN908 is an Italian-born, Berlin based video-game director, consultant and streamer. He’s directed music videos for Endgame, WWWings, DJNJ Drone, The 1975, developed digital infrastructures for the UAE pavilion at the 2021 World Expo in Dubai, Tellart, Google and had his films shown at the EYE Film Museum, EMAF, Oberhausen Film Festival. He is an alumni of Fabrica, the Jan Van Eyck Academie, the Sandberg Instituut and a professor of Media, Communications and Cultural Studies at Goldsmiths University in London. He is also a member of Trust in Berlin, and the founder, in 2021, of Casa Declino, a game design studio exploring the metaverse." (from the Photential Facebook page, 2021)
+  - Submitted a "[fashion video](https://www.youtube.com/watch?v=gJhq4hOuJ3o)" to SHOWStudio in 2017 and bio then read "GVN908 is a film collective whose work focuses on online communities and the boundaries set within the web."
+  - Now (?) goes by [Alex Declino](https://x.com/alexdeclino)
+  - Moving Castles
+
+
+- Leïth Benkhedda
+  - Do Not Research
+  - Trust
+  - New Models
+  - On [Are.na](https://www.are.na/leith-benkhedda/channels)
+
+
+## :seedling:
 
 [What Theory is *Not*, Theorizing *Is*](https://sci-hub.ru/https://doi.org/10.2307/2393789) (Karl E. Weick, Administrative Science Quarterly, 1995)
 <blockquote>Products of the theorizing process seldom emerge as full-blown theories, which means that most of what passes for theory in organizational studies consists of approximations. Although these approximations vary in their generality, few of them take the form of strong theory, and most of them can be read as texts created "in lieu of" strong theories. These substitutes for theory may result from lazy theorizing in which people try to graft theory onto stark sets of data. But they may also represent interim struggles in which people intentionally inch toward stronger theories. The products of laziness and intense struggles may look the same and may consist of references, data, lists, diagrams, and hypotheses. To label these five as "not theory" makes sense if the problem is laziness and incompetence. But ruling out those same five may slow inquiry if the problem is theoretical development still in its early stages. Sutton and Staw know this. But it gets lost in their concern with theory as a product rather than as a process. To add complication and nuance to their message, I want to focus on the process of theorizing.</blockquote>
 
-
-[Yak Collective](https://www.yakcollective.org/)
+## Elsewhere on Metalabel
+- [Metalabel FW2024](https://squad.metalabel.com/fw2024)
+- [Forever Magazine](https://forever.metalabel.com/)
+- [Do Not Research](https://donotresearch.metalabel.com/)
+- [Ann Hirsch](https://annhirsch.metalabel.com/) (author of the horrifying interactive auto-bio chatroom Lolita (e-)book [Twelve](http://twelve.chat/))
+- [2dCloud](https://www.metalabel.com/2dcloud) and [egirl magazine](https://egirl.metalabel.com/)
+- [Embrace Variety zine](https://embracevariety.metalabel.com/)
+- "Conceptual artist" Justin Gignac's [New York City Garbage](https://nycgarbage.metalabel.com/) sculptures (kinda seems like he's just another slippery technologically motivated opportunist based on a little poking around [his socials](https://www.instagram.com/justingignac/reel/DDLJ1BKxOjM/) &mdash; setting aside that his little-enclosed-sculptures-of-trash idea is a few decades behind the much more interesting (conceptually & visually) work of Yuji Agematsu)
+- [Autonomous Worlds Network](https://autonomousworlds.metalabel.com/)
+- [Network Archives](https://networkarchives.metalabel.com/)
+- [Cryptid Soup](https://cryptidsoup.metalabel.com/)
 
 ---
 

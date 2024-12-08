@@ -31,3 +31,15 @@ Discussants/panellists:
 - Dr Vashna Jagarnath is a Director of both Pan Africa Today and Friends of the Workers.
 - Professor Kelly Gillespie, from the University of the Western Cape, is a political and legal anthropologist, with a research focus on abolition in South Africa.
 - Facilitator: Maneo Refiloe Mohale editor, feminist writer and poet.
+
+---
+
+"When one individual inflicts bodily injury upon another such that death results, we call the deed manslaughter; when the assailant knew in advance that the injury would be fatal, we call his deed murder. But when society [1] places hundreds of proletarians in such a position that they inevitably meet a too early and an unnatural death, one which is quite as much a death by violence as that by the sword or bullet; when it deprives thousands of the necessaries of life, places them under conditions in which they cannot live – forces them, through the strong arm of the law, to remain in such conditions until that death ensues which is the inevitable consequence – knows that these thousands of victims must perish, and yet permits these conditions to remain, its deed is murder just as surely as the deed of the single individual; disguised, malicious murder, murder against which none can defend himself, which does not seem what it is, because no man sees the murderer, because the death of the victim seems a natural one, since the offence is more one of omission than of commission. But murder it remains."
+
+&mdash; Frederick Engels, [Condition of the Working Class in England](https://www.marxists.org/archive/marx/works/1845/condition-working-class/ch07.htm), 1845
+
+[1] **Note by Engels to the German edition of 1845:** When as here and elsewhere I speak of society as a responsible whole, having rights and duties, I mean, of course, the ruling power of society, the class which at present holds social and political control, and bears, therefore, the responsibility for the condition of those to whom it grants no share in such control. This ruling class in England, as in all other civilised countries, is the bourgeoisie. But that this society, and especially the bourgeoisie, is charged with the duty of protecting every member of society, at least, in his life, to see to it, for example, that no one starves, I need not now prove to my German readers. If I were writing for the English bourgeoisie, the case would be different.
+   
+**Added by Engels to the American edition of 1887:** And so it is now in Germany. Our German capitalists are fully up to the English level, in this respect at least, in the year of grace, 1886.
+
+**Added by Engels to the German edition of 1892:** How things have changed in the last fifty years! Today there are members of the English middle-classes who recognise that society has duties to the individual citizen – but as for the German middle-classes?!?
