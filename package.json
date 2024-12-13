@@ -18,6 +18,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "eleventy-plugin-pdfembed": "^1.0.2",
     "i": "^0.3.7",
-    "markdown-it-emoji": "^3.0.0"
+    "markdown-it-emoji": "^3.0.0",
+    "markdown-it-task-checkbox": "^1.0.6"
   }
 }
