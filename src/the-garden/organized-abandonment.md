@@ -3,7 +3,7 @@ layout: simple.njk
 title: Organized Abandonment
 eleventyNavigation:
     key: Organized Abandonment
-    parent: The Garden
+    parent: Books
 ---
 
 # Organized Abandonment

@@ -3,7 +3,7 @@ layout: simple.njk
 title: Favorite Records of 2024
 eleventyNavigation:
     key: Favorite Records of 2024
-    parent: The Garden
+    parent: Music
 ---
 
 # Favorite Records of 2024

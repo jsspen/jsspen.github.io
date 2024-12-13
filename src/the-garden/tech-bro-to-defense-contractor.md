@@ -3,7 +3,7 @@ layout: simple.njk
 title: Tech Bro to Defense Contractor Pipeline
 eleventyNavigation:
     key: Tech Bro to Defense Contractor Pipeline
-    parent: The Garden
+    parent: Technology
 ---
 
 # Tech Bro to Defense Contractor Pipeline

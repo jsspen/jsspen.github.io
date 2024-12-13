@@ -3,7 +3,7 @@ layout: simple.njk
 title: Ay Eye
 eleventyNavigation:
     key: Ay Eye
-    parent: The Garden
+    parent: Technology
 ---
 
 # Ay Eye

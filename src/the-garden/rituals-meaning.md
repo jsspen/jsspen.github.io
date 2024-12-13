@@ -3,7 +3,7 @@ layout: simple.njk
 title: Rituals & Meaning
 eleventyNavigation:
     key: Rituals & Meaning
-    parent: The Garden
+    parent: Books
 ---
 
 # Excerpts from "atwood’s anti-capitalism"

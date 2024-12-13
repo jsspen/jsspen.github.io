@@ -3,8 +3,9 @@ layout: simple-subsection.njk
 title: The Dark Forest Theory of the Internet
 eleventyNavigation:
     key: The Dark Forest Theory of the Internet
-    parent: The Garden
+    parent: Technology
 ---
+
 
 # The Dark Forest Theory of the Internet
 
@@ -56,26 +57,97 @@ Links/quotes presented alongside the book on its Metalabel purchase ("collect") 
   - co-founder of Kickstarter
   - co-founder of [Metalabel](https://www.metalabel.com/)
 
-
 - [Venkatesh Rao](https://substack.com/@contraptions)
   - Ribbonfarm
 
 
-- [Joshua Citarella](https://substack.com/@joshuacitarella)
-  - Artist and internet culture writer.
+- [Joshua Citarella](https://substack.com/@joshuacitarella): Artist and internet culture writer.
   - Author of [*Politigram & the Post-left*](https://joshuacitarella.metalabel.com/release-h2er)
+	  - "Short" version PDF [here](https://joshuacitarella.com/_pdf/Politigram_Post-left_2018_short.pdf)
+	  - "Notes" from the Metalabel purchase page
+		  - [Video Lecture: Extremely Online Politics](https://youtu.be/elTJh_ljKmA?si=envEsVLgD4QpqNrt)
+		  - [Substack: Joshua Citarella: Politigram & the Post-left](https://joshuacitarella.substack.com/p/politigram-and-the-post-left)
+		  - [The Stoa: Politigram and the Post-left w/ Joshua Citarella](https://youtu.be/bMWswzgizG8?si=Q5UZ2XdMkmF3UTpx)
   - Founder of [Do Not Research](https://donotresearch.substack.com/).
-  - Doomscroll
+  - [Doomscroll](https://www.youtube.com/@doomscrollpodcast) video series “‘Lex Fridman for the Left,’ some have called it,” says Roch-Decter
+	  - [Production Company MEMORY Launches New Doomscroll Political Talk Show Podcast with Joshua Citarella - Filmmaker Magazine](https://filmmakermagazine.com/127726-doomscroll-joshua-citarella/)
+		  - "_Doomscroll_ is focused on political discourse for a younger audience that has grown up online. They have a deep skepticism and suspicion of mainstream media. Doomscroll is a talk show that caters to young listeners who grew up in a crisis paradigm and now seek alternative sources of information."
+		  - [MEMORY](http://www.memory.is/)
+			  - Sebastian Pardo & Riel Roch-Decter
+	  - Brace Belden: [LARP and Destroying the US Government](https://www.youtube.com/watch?v=9Jq-17KImSM)
+	  - Catherine Liu: [Trauma, Virtual and Liberal Elites](https://www.youtube.com/watch?v=Ia6m3pIIS2k)
+		  - "a spiky dialogue centering around topics found in her book, _[Virtue Hoarders: The Case Against the Professional Managerial Class](https://www.upress.umn.edu/9781517912253/virtue-hoarders/)_, including the capitalist foot soldiers of the PMC (who, include, truth be told, most of us in the non-profit and media spaces), techno-feudalism, elite capture, and the psychic enclosure of online social-media platforms, which partition dissent into algorithimcally monetizable spaces."
+	  - Jreg: [Post-Ironic Hyper-Political Extremism](https://www.youtube.com/watch?v=jhsUchBe3I0)
+	  - JJ McCullough: [Are Millennial Leftists Aging into Right-wingers?](https://www.youtube.com/watch?v=2y4dL__nh7M)
+	  - Trevor Paglen: [Mind Hacking, AI and Psyops Capitalism](https://www.youtube.com/watch?v=--0kYOwOoDQ)
+	  - Peter James Fowler: [I was an 11 Year Old Right-wing Troll with 10,000 Followers](https://www.youtube.com/watch?v=KHLodHU9OtI)
+	  - Yung Chomsky: [Weight Lifting, Aesthetics, Nerds and Jocks](https://www.youtube.com/watch?v=Ld2Jr0KUCPw)
+	  - Matty Healy: [Pop Culture in the 21st Century](https://www.youtube.com/watch?v=kdCdpnz0wDU)
+	  - Amber A'Lee Frost: [Vulgarity and the Dirtbag Left](https://www.youtube.com/watch?v=5aBkzzIyGaY)
+	  - Faraday Speaks: [Beyond Pipelines and Rabbit Holes](https://www.youtube.com/watch?v=5qRIPfneSVg)
+	  - Jack Wagner: [Questioning Beliefs, Creative Paths, Doing Your Own Research](https://www.youtube.com/watch?v=8SjVkFgm7t4)
+	  - Daniel Keller: [Politics in the 21st Century](https://www.youtube.com/watch?v=B5EiDWR2G6U)
+- Links
+	- [Why You Can't Look Away From Cursed Images - PAPER Magazine](https://www.papermag.com/cursed-images-break-the-internet#rebelltitem8)
+	- [Brad Troemel, the Troll of Internet Art | The New Yorker](https://www.newyorker.com/magazine/2017/01/30/brad-troemel-the-troll-of-internet-art)
+	- [Up and Coming: Joshua Citarella Is the Ultimate New York Freelancer | Artsy](https://www.artsy.net/article/artsy-editorial-joshua-citarella-ultimate-new-york-freelancer)
+	- [‘OK Boomer’ Marks the End of Friendly Generational Relations - The New York Times](https://www.nytimes.com/2019/10/29/style/ok-boomer.html)
+	- [Joshua Citarella at Higher Pictures | Observer](https://observer.com/2013/09/joshua-citarella-at-higher-pictures/)
+
+
 
 
 - [Caroline Busta](https://carolinebusta.github.io/): Berlin-based writer and editor
-  - co-founder of New Models (est. 2018), a media channel and community addressing the emergent effects of networked technology on culture
-  - [The New Models Webdex / CodexY2K20 Glossary Terms](https://webdex-y2k20.newmodels.io/)
-  - editor-in-chief of the Berlin-based critical art journal Texte zur Kunst (2014-17)
-  - associate editor at Artforum magazine (2008-14) in New York.
+  - Co-founder [New Models](https://newmodels.substack.com/) (2018) (w/ LIL INTERNET)
+	  - "a media channel and community addressing the emergent effects of networked technology on culture"
+	  - [The New Models Webdex / CodexY2K20 Glossary Terms](https://webdex-y2k20.newmodels.io/)
+  - Prev. editor-in-chief of the Berlin-based critical art journal [Texte zur Kunst](https://www.textezurkunst.de/en/) (2014-17)
+  - Prev. associate editor at Artforum (2008-14)
 
 
-- [LIL INTERNET](https://substack.com/@lilinternet)
+- [LIL INTERNET](https://lilinter.net/): "Texas born, Virginia raised, and Berlin based director and writer with a long career of multidisciplinary pop culture influence"
+	- Co-founder [New Models](https://newmodels.substack.com/) (2018) (w/ Caroline Busta)
+		- Produced a series of [radio plays](https://soundcloud.com/newmodels/sets/lilinternet-nm-radio-plays)
+	- Co-Founder [Channel](https://www.channel.xyz/) (2021)
+		- "Channel is a composable media network for creator communities."
+		- Co-Founder & CEO: Daniel Keller
+		- Co-Founder & Product & Tech: Cullen Miller
+		- Listed with Caroline Busta as a "Founding Creator" along with:
+			- Holly Herndon & Mat Dryhurst (Interdependence)
+			- Joshua Citarella (Do Not Research)
+		- Open source [GitHub - channeleng/Channel: Web application for creating, browsing, and serving token-gated (ERC-721) RSS feeds](https://github.com/channeleng/Channel)
+			1. permits allowlisted admin users to upload media (audio, images, metadata) and format them into episodes.
+			2. indexes your media into a stylized front-end web application (e.g. [channel.xyz](https://channel.xyz)) for users to preview and listen.
+			3. gates your media with a specifiable ERC-721 token; only holders of this token may access the media.
+			4. syndicates, serves, and generates unique RSS links per token holder; when ownership of tokens change hands, access is revoked.
+	- [GLOBAL ART FORUM 16: UNDERSTANDING PREDICTING MEDIA](https://www.youtube.com/watch?v=LaOEbCO45eY) (Art Dubai, 2023)
+	- [THE FUTURE OF CRITIQUE – CRITICISM IN A TIME OF HYPERCIRCULATION](http://www.youtube.com/watch?v=TSIN87F1mHw) (Bundeskunsthalle, 2022)
+	- [Techno Globalization Pandemic (ed. Bart van der Heide, Hatje Cantz, 2023](https://www.hatjecantz.com/products/59095-techno-globalization-pandemic) "Techno as a Political Platform"
+		- Texts by: Caroline Busta & LIL INTERNET, Matthew Collin, Anna Greenspan, Matthew Herbert, Bart van der Heide
+	- [ENTER THE VOID: Roy Scranton and @LILINTERNET on hyperreality and reflexive narrative](https://www.textezurkunst.de/en/101/enter-void-en/) (Texte Zur Kunst, no. 101, March 2016)
+	- Director of music videos:
+		- Diplo feat. Nicky Da B "Express Yourself" (2012)
+		- Major Lazer feat. RiFF RAFF "Original Don (Davoodi Remix)" (2012)
+		- Beyoncé "[No Angel](https://www.youtube.com/watch?v=d7PPjEB2QZQ)" (2013)
+			- [We Talked to @LILINTERNET About Directing Beyoncé’s “No Angel” Video](https://www.vice.com/en/article/lil-internet-beyonce-no-angel-video/) (Vice, 2013)
+		- Skrillex feat. Diplo, CL, & G-Dragon "Dirty Vibe" (2014)
+		- Boys Noize & Pilo "Cerebral" (2015)
+		- Brooke Candy "A Study in Duality" (2015)
+		- Boyz Noize "Mayday" (Snowden O.S.T.) (2016)
+		- Iggy Azalea "Mo Bounce" (2017)
+		- Cro feat. Wyclef Jean "Todas" (2017)
+		- Cro "Baum" (2017)
+		- Amindi, Tessellated & Villeyz "Pine & Ginger" (2017)
+		- Buddy "Trouble on Central" (2018)
+		- Lotic "Emergency" (2021)
+	- Commercials
+		- "a few years of editing commercials at the award winning advertising agency Modernista! he went on to build the video department of streetwear retail giant Karmaloop"
+		- Nike Arimax 720 (2019)
+		- Adidas Originals "Yung"
+	- designed a live stage show for Boys Noize, produced music and performed live at Glastonbury with Azealia Banks
+	- [spawned the internet niche culture \#seapunk](https://x.com/lilinternet/status/75846788397006848)
+	- has written cultural criticism for ArtForum, Texte Zur Kunst, and the Stedelijk Museum in Amsterdam.
+	- "This long, diverse career positions LIL INTERNET uniquely between the analytical, creative, and memetic. With his critical pursuits providing a framework for the rapidly changing ways media is consumed and identity is formed in the digital space, LIL INTERNET crafts fashion forward- but deeply authentic- films with a feeling of magic realism. In a time of hyper-savvy consumers, media burnout, and disposable content, LIL INTERNET elevates brand, narrative and messaging to forge meaningful, resonant connections with viewers that wont be forgotten."
 
 
 - [Maggie Appleton](https://substack.com/@maggieappleton)
@@ -91,20 +163,26 @@ Links/quotes presented alongside the book on its Metalabel purchase ("collect") 
 
 - [Arthur Röing Baer](https://x.com/ArthurRoingBaer)
   - Moving Castles
-  - co-founder of Trust
+  - co-founder of [Trust](../trust)
   - Writings for [FOAM](https://medium.com/@arthurroingbaer), which is now [here](https://mirror.xyz/foamspace.eth) and seems to be some blockchain GPS thing?
 
 
-- GVN908 (aka Alex Declino): a world designer with a background in cinema and procedural storytelling.
-  - "GVN908 is an Italian-born, Berlin based video-game director, consultant and streamer. He’s directed music videos for Endgame, WWWings, DJNJ Drone, The 1975, developed digital infrastructures for the UAE pavilion at the 2021 World Expo in Dubai, Tellart, Google and had his films shown at the EYE Film Museum, EMAF, Oberhausen Film Festival. He is an alumni of Fabrica, the Jan Van Eyck Academie, the Sandberg Instituut and a professor of Media, Communications and Cultural Studies at Goldsmiths University in London. He is also a member of Trust in Berlin, and the founder, in 2021, of Casa Declino, a game design studio exploring the metaverse." (from the Photential Facebook page, 2021)
-  - Submitted a "[fashion video](https://www.youtube.com/watch?v=gJhq4hOuJ3o)" to SHOWStudio in 2017 and bio then read "GVN908 is a film collective whose work focuses on online communities and the boundaries set within the web."
-  - Now (?) goes by [Alex Declino](https://x.com/alexdeclino)
+- [Alex Declino](https://x.com/alexdeclino)(fka GVN908)): a world designer with a background in cinema and procedural storytelling
+  - "GVN908 is an Italian-born, Berlin based video-game director, consultant and streamer." (2021)
+  - Directed music videos for Endgame, WWWings, DJNJ Drone, The 1975
+  - Developed digital infrastructures for the UAE pavilion at the 2021 World Expo in Dubai, Tellart, Google
+  - Hhad his films shown at the EYE Film Museum, EMAF, Oberhausen Film Festival.
+  - Alumni of Fabrica, the Jan Van Eyck Academie, the Sandberg Instituut
+  - Professor of Media, Communications and Cultural Studies at Goldsmiths University in London
+  - Member of [Trust](../trust)
+  - Founde Casa Declino, "a game design studio exploring the metaverse" in 2021
+  - Submitted a "[fashion video](https://www.youtube.com/watch?v=gJhq4hOuJ3o)" to SHOWStudio in 2017 and the bio read "GVN908 is a film collective whose work focuses on online communities and the boundaries set within the web."
   - Moving Castles
 
 
 - Leïth Benkhedda
   - Do Not Research
-  - Trust
+  - [Trust](../trust)
   - New Models
   - On [Are.na](https://www.are.na/leith-benkhedda/channels)
 

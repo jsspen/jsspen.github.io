@@ -3,7 +3,7 @@ layout: simple.njk
 title: Psychogeography
 eleventyNavigation:
     key: Psychogeography
-    parent: The Garden
+    parent: Books
 ---
 
 # Psychogeography
