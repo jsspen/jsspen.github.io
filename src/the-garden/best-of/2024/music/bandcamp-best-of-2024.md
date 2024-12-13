@@ -8,12 +8,6 @@ eleventyNavigation:
 
 # Bandcamp's Best of 2024
 
-I like music, I like lists, I like Bandcamp
-
-Box will be checked once I've listened to the album
-
-Personal thoughts/notes will be added when warranted
-
 [The Best Albums of 2024: A – F](https://daily.bandcamp.com/best-of-2024/the-best-albums-of-2024-a-f)
 
 - [x] [ÑAÑA | Isleña Antumalen](https://islenaantumalen.bandcamp.com/album/a-a)
