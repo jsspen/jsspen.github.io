@@ -1,12 +1,12 @@
 ---
 layout: simple.njk
-title: Favorite Records of 2024
+title: My Favorite Records of 2024
 eleventyNavigation:
-    key: Favorite Records of 2024
-    parent: Music
+    key: My Favorite Records of 2024
+    parent: Best Music of 2024
 ---
 
-# Favorite Records of 2024
+# My Favorite Records of 2024
 
 UNDER CONSTRUCTION!
 

@@ -1,12 +1,12 @@
 ---
 layout: simple.njk
-title: Favorite Records of 2023
+title: My Favorite Records of 2023
 eleventyNavigation:
-    key: Favorite Records of 2023
-    parent: Music
+    key: My Favorite Records of 2023
+    parent: Best Music of 2023
 ---
 
-# Favorite Records of 2023
+# My Favorite Records of 2023
 
 <br>
 <div class="album-grid">
