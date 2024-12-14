@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Projects | Jordan Spencer
+title: Projects
 eleventyNavigation:
     key: Projects
     parent: Home

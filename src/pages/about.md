@@ -1,5 +1,7 @@
 ---
 layout: base.njk
+title: About
+permalink: "/{{ title | slugify }}/"
 ---
 
 <img class="float" src="/imgs/headshot.jpg"> 

@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: LISTener's Friend | Jordan Spencer
+title: LISTener's Friend
 eleventyNavigation:
     key: LISTener's Friend
     parent: Projects

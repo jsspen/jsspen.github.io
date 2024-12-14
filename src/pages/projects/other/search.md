@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: Search Automation | Jordan Spencer
+title: Search Automation
 eleventyNavigation:
     key: Search Automation
     parent: Other Coding Examples

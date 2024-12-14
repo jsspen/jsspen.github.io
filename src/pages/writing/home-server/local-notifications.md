@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: Local Notifications | Jordan Spencer
+title: Local Notifications
 date: 2024-01-13
 eleventyNavigation:
     key: Local Notifications

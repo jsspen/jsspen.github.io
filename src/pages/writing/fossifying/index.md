@@ -1,6 +1,7 @@
 ---
 layout: subsection.njk
-title: FOSSifying My Phone | Jordan Spencer
+title: FOSSifying My Phone
+permalink: "/writing/fossifying/"
 eleventyNavigation:
     key: FOSSifying My Phone
     parent: Writing

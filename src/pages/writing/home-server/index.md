@@ -1,6 +1,7 @@
 ---
 layout: subsection.njk
-title: My Home Server | Jordan Spencer
+title: My Home Server
+permalink: "/writing/{{ title | slugify }}/"
 eleventyNavigation:
     key: My Home Server
     parent: Writing

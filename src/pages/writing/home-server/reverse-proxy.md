@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: HTTPS and a Reverse Proxy | Jordan Spencer
+title: HTTPS and a Reverse Proxy
 date: 2024-01-10
 eleventyNavigation:
     key: HTTPS and a Reverse Proxy

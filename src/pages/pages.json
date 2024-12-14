@@ -1,7 +1,7 @@
 {
   "layout": "page.njk",
   "date": "Created",
-  "title": "Jordan Spencer | Dev",
+  "permalink": "/{{ title | slugify }}/",
   "author": {
     "name": "Jordan Spencer",
     "href": "https://Jordan-Spencer.com"

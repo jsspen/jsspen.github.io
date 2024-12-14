@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: sumIntervals | Jordan Spencer
+title: sumIntervals
 eleventyNavigation:
     key: sumIntervals
     parent: JavaScript Katas

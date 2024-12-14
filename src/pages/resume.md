@@ -1,5 +1,6 @@
 ---
 layout: base.njk
+title: "CV"
 ---
 <div class="pdf" title="Embedded resume PDF">{% pdfembed "/docs/Jordan Spencer - Resume.pdf" "IN_LINE" %}</div>
 
