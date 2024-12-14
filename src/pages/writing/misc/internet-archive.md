@@ -1,6 +1,7 @@
 ---
 layout: page.njk
 date: 2024-11-13
+title: Internet History | Jordan Spencer
 eleventyNavigation:
     key: 2024-11-13 &mdash; Internet History
     parent: Miscellany

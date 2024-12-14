@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: The What & The Why
+title: The What & The Why | Jordan Spencer
 date: 2024-01-01
 eleventyNavigation:
     key: The What & The Why

@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: Other Coding Examples
+title: Other Coding Examples | Jordan Spencer
 eleventyNavigation:
     key: Other Coding Examples
     parent: Projects

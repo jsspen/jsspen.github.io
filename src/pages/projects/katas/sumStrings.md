@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: sumStrings
+title: sumStrings | Jordan Spencer
 eleventyNavigation:
     key: sumStrings
     parent: JavaScript Katas

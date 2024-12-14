@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: Local DNS Management
+title: Local DNS Management | Jordan Spencer
 date: 2024-01-11
 eleventyNavigation:
     key: Local DNS Management

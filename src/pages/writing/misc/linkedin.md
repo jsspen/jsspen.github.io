@@ -1,7 +1,7 @@
 ---
 layout: page.njk
 date: 2024-12-13
-title: On LinkedIn "Top Applicant" Bait
+title: On LinkedIn "Top Applicant" Bait | Jordan Spencer
 eleventyNavigation:
     key: 2024-12-13 &mdash; On LinkedIn "Top Applicant" Bait
     parent: Miscellany

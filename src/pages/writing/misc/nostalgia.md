@@ -1,6 +1,7 @@
 ---
 layout: page.njk
 date: 2024-01-17
+title: Xanga, David Horvitz's Nostalgia, Cat Power '98 | Jordan Spencer
 eleventyNavigation:
     key: 2024-01-17 &mdash; Xanga, David Horvitz's <i>Nostalgia</i>, Cat Power '98
     parent: Miscellany

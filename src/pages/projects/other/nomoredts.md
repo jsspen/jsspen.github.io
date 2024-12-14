@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: No More DTS
+title: No More DTS | Jordan Spencer
 eleventyNavigation:
     key: No More DTS
     parent: Other Coding Examples

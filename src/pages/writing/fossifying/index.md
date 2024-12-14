@@ -1,6 +1,6 @@
 ---
 layout: subsection.njk
-title: FOSSifying My Phone
+title: FOSSifying My Phone | Jordan Spencer
 eleventyNavigation:
     key: FOSSifying My Phone
     parent: Writing

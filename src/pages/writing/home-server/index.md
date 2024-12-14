@@ -1,6 +1,6 @@
 ---
 layout: subsection.njk
-title: My Home Server
+title: My Home Server | Jordan Spencer
 eleventyNavigation:
     key: My Home Server
     parent: Writing

@@ -1,6 +1,7 @@
 ---
 layout: page.njk
 date: 2024-12-01
+title: Trying to Run a Local LLM | Jordan Spencer
 eleventyNavigation:
     key: 2024-12-01 &mdash; Trying to Run a Local LLM
     parent: My Home Server

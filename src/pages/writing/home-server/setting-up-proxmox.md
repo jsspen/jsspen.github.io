@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: Setting Up Proxmox
+title: Setting Up Proxmox | Jordan Spencer
 date: 2024-01-02
 eleventyNavigation:
     key: Setting Up Proxmox

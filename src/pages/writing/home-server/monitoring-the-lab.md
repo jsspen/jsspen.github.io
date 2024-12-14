@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: Monitoring the Lab
+title: Monitoring the Lab | Jordan Spencer
 date: 2024-01-12
 eleventyNavigation:
     key: Monitoring the Lab

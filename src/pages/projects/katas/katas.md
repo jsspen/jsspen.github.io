@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: JavaScript Katas
+title: JavaScript Katas | Jordan Spencer
 eleventyNavigation:
     key: JavaScript Katas
     parent: Other Coding Examples

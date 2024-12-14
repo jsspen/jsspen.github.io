@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: ISSU Grabber
+title: ISSU Grabber | Jordan Spencer
 eleventyNavigation:
     key: ISSU Grabber
     parent: Other Coding Examples

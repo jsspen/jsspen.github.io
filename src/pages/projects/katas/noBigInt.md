@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: noBigInt
+title: noBigInt | Jordan Spencer
 eleventyNavigation:
     key: noBigInt
     parent: JavaScript Katas

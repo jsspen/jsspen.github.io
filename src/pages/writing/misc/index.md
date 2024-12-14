@@ -1,6 +1,6 @@
 ---
 layout: subsection.njk
-title: Miscellany
+title: Miscellany | Jordan Spencer
 eleventyNavigation:
     key: Miscellany
     parent: Writing

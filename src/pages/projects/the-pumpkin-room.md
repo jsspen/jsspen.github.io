@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: The Pumpkin Room
+title: The Pumpkin Room | Jordan Spencer
 eleventyNavigation:
     key: The Pumpkin Room
     parent: Projects

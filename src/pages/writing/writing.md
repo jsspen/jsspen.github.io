@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Writing
+title: Writing | Jordan Spencer
 eleventyNavigation:
     key: Writing
     parent: Home
