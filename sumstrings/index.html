@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="/styles.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="/styles.css">
+    </noscript>
+    <link rel="stylesheet" href="/prism-vsc-dark-plus.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap" rel="stylesheet">
+    <title>sumStrings</title>
+  </head>
+  <body>
+    <h1>jordan spencer</h1>
+    <header>
+      <nav><a href="/">home</a> | <a href="/about">about</a> | <a href="/projects">projects</a> | <a href="/writing">writing</a> | <a href="/cv">cv</a> | <a href="/other-projects">other projects</a></nav>
+    </header>
+    
+<article>
+    <p><strong>Source:</strong> <a href="https://www.codewars.com/kata/5324945e2ece5e1f32000370">Codewars</a></p>
+<p><strong>The Challenge:</strong> Given the string representations of two integers, return the string representation of the sum of those integers.
+A string representation of an integer will contain no characters besides the ten numerals &quot;0&quot; to &quot;9&quot;. I have removed the use of BigInteger and BigDecimal.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">sumStrings</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  arrayA <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  arrayB <span class="token operator">=</span> b<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  top <span class="token operator">=</span> arrayA<span class="token punctuation">.</span>length <span class="token operator">>=</span> arrayB<span class="token punctuation">.</span>length <span class="token operator">?</span> arrayA <span class="token operator">:</span> arrayB<span class="token punctuation">;</span>
+  bottom <span class="token operator">=</span> arrayB<span class="token punctuation">.</span>length <span class="token operator">&lt;=</span> arrayA<span class="token punctuation">.</span>length <span class="token operator">?</span> arrayB <span class="token operator">:</span> arrayA<span class="token punctuation">;</span>
+  diff <span class="token operator">=</span> top<span class="token punctuation">.</span>length <span class="token operator">-</span> bottom<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  bottom<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>diff<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> carried <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> x <span class="token operator">=</span> top<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> x <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> x<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    total <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>top<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">Number</span><span class="token punctuation">(</span>bottom<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> carried<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>total <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      sum <span class="token operator">=</span> total <span class="token operator">+</span> sum<span class="token punctuation">;</span>
+      carried <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>total <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      sum <span class="token operator">=</span> <span class="token punctuation">(</span>total <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">+</span> sum<span class="token punctuation">;</span>
+      carried <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  sum <span class="token operator">=</span> carried <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">+</span> sum <span class="token operator">:</span> sum<span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator">&lt;</span> sum<span class="token punctuation">.</span>length<span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>sum<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">"0"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      sum <span class="token operator">=</span> sum<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+</article>
+<nav>
+    
+</nav>
+<br/>
+  </body>
+</html>

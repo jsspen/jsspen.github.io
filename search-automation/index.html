@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="/styles.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="/styles.css">
+    </noscript>
+    <link rel="stylesheet" href="/prism-vsc-dark-plus.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap" rel="stylesheet">
+    <title>Search Automation</title>
+  </head>
+  <body>
+    <h1>jordan spencer</h1>
+    <header>
+      <nav><a href="/">home</a> | <a href="/about">about</a> | <a href="/projects">projects</a> | <a href="/writing">writing</a> | <a href="/cv">cv</a> | <a href="/other-projects">other projects</a></nav>
+    </header>
+    
+<article>
+    <h1>Automating the Boring Stuff</h1>
+<p><strong>Ingredients:</strong> JavaScript, Browser Userscripting, Python, Excel</p>
+<p>Job hunting can be a real slog but sometimes 5 minutes of code can provide a simple solution to at least a little bit of the work. Here's an example. This isn't anything particularly complex but I've included it here as it's an example of how I've been approaching things lately and my thought process at the time of problem solving.</p>
+<h2>Manipulating the Web with Userscripts</h2>
+<p>I came across a list of remote-friendly companies and I thought it would be a good idea to make my way down the list checking for openings.</p>
+<p>My first thought was just to copy the list into a new page of my trusty Job Hunting Spreadsheet. Though the list was only ~200 lines it quickly froze up when I tried to drop it in. After a few minutes of waiting I saw why: it had included every company logo from the first column and some were <strong>huge</strong>! I fiddled a bit to see if there was a quick way to delete the images and retain the text but things were a mess. I tried using the text-import dialogue to paste only the text but then the formatting was a single-column disaster.</p>
+<p>One of my favorite things to play with lately is browser userscripts. After a quick peek at the list page's HTML, I wrote a quick script in ViolentMonkey to find and delete all the <code>div</code> tags with a class of <code>company-icon</code>.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// ==UserScript==</span>
+<span class="token comment">// @name        No logos on levels.fyi list</span>
+<span class="token comment">// @namespace   Violentmonkey Scripts</span>
+<span class="token comment">// @match       http*://*levels.fyi/remote/*</span>
+<span class="token comment">// @grant       none</span>
+<span class="token comment">// @version     1.0</span>
+<span class="token comment">// @author      jsspen</span>
+<span class="token comment">// @description Removes all company logos from page</span>
+<span class="token comment">// ==/UserScript==</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">'use strict'</span><span class="token punctuation">;</span>
+    <span class="token comment">// Select all divs with class company-icon</span>
+    <span class="token keyword">let</span> iconDivs <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">"div[class='company-icon']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Loop through each div and remove it</span>
+    iconDivs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">div</span> <span class="token operator">=></span> div<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2>Automated Searching with Python and the DuckDuckGo API</h2>
+<p>After a refresh of the page: no more icons and I could copy the list into my spreadsheet without issue. But then I started thinking about how much of a pain it was going to be to search for each company on my new list (the original page didn't include any links!) and it would be so nice to automate that part. I remembered that DuckDuckGo offers a free search API and after a quick look around I found a Python package (<code>duckduckgo-search</code>) that simplifies interacting with the API.</p>
+<p>So I wrote a quick script that took in an array of strings (<em>company names with some find-and-replace magic to add the necessary quotes and commas to the raw text</em>) looped through the entries and interpolated each into a simple query string (<code>q=f&quot;{company} careers page&quot;</code>), limited the returned data to only the first result, parsed the returned data for the URL (<code>result[0]['href']</code>) and saved that along with the company name into a new row in a csv output file. A quick <code>time.sleep(2)</code> in the loop after each search slowed things down enough to avoid being rate limited.</p>
+<pre class="language-Python"><code class="language-Python">import time
+from duckduckgo_search import DDGS
+
+companies = ["Airbnb","Dropbox","Pinterest"]
+
+with open(f"companies_and_career_pages.csv", "w", encoding="utf-8") as file:
+    for company in companies:
+        result = DDGS().text(f"{company} careers page", max_results=1)
+        csv_line = company + "," + (result[0]['href'] or ' ') + "\n"
+        file.write(csv_line)
+        time.sleep(2)</code></pre>
+<p>Once the script was finished I dropped my new csv list into my spreadsheet. <em>But the URLs weren't clickable!</em> So for a final shortcut I added a new formula column with <code>=HYPERLINK({url cell},{name cell})</code> and just like that I had a nice column of clickable links to each company's careers page!</p>
+<p>P.S. For those like me who wonder if it's possible to add the formula directly to the output file, it seems LibreOffice Calc doesn't like when you aren't writing formulas in Calc itself, so outputting files with formatting like: {𝘤𝘰𝘮𝘱𝘢𝘯𝘺},{𝘶𝘳𝘭},=𝘏𝘠𝘗𝘌𝘙𝘓𝘐𝘕𝘒(𝘉{𝘪𝘥𝘹},𝘈{𝘪𝘥𝘹}) and =𝘏𝘠𝘗𝘌𝘙𝘓𝘐𝘕𝘒(&quot;𝘩𝘵𝘵𝘱𝘴://𝘳𝘰𝘢𝘥𝘮𝘢𝘱.𝘴𝘩/𝘥𝘢𝘵𝘢-𝘢𝘯𝘢𝘭𝘺𝘴𝘵&quot;, &quot;𝘙𝘰𝘢𝘥𝘮𝘢𝘱&quot;) unfortunately just results in plain text.</p>
+
+</article>
+<nav>
+    
+</nav>
+<br/>
+  </body>
+</html>

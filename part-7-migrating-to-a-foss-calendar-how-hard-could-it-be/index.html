@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="/styles.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="/styles.css">
+    </noscript>
+    <link rel="stylesheet" href="/prism-vsc-dark-plus.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap" rel="stylesheet">
+    <title>Part 7: Migrating to a FOSS Calendar... How Hard Could It Be?</title>
+  </head>
+  <body>
+    <h1>jordan spencer</h1>
+    <header>
+      <nav><a href="/">home</a> | <a href="/about">about</a> | <a href="/projects">projects</a> | <a href="/writing">writing</a> | <a href="/cv">cv</a> | <a href="/other-projects">other projects</a></nav>
+    </header>
+    
+<article>
+    <h1>FOSSifying My Phone</h1>
+<h2>Part 7: Migrating to a FOSS Calendar... How Hard Could It Be?</h2>
+<p>This is Part 7 of an ongoing series detailing my experience dumbing down my phone, taking ownership of my data, and learning a lot about FOSS along the way. NOTE: These are living documents that will surely change with time!</p>
+<p>...</p>
+<h3>The Calendar</h3>
+<p>I've been procrastinating getting my calendar situation figured out since I first started this project. My Google calendar has nine individual color-coded calendars (each representing a different category of &quot;event&quot;) with numerous reoccurring events. I knew that this probably wasn't going to be a quick and easy transition, that I had a lot of options, and that I definitely didn't know anything about CalDAV. I also knew that this was going to be particularly important to get right because it was also going to directly affect my wife.</p>
+<p>My wife and I share the calendars between our accounts and it's been nice and pain-free being able to manage the calendars from either account, anywhere we log in, and have it instantly reflected on each others' devices. Since having our twins we've become pretty heavy calendar users and that will only become more and more true as they get older, so something had to be done. Plus I have a haircut coming up this week and I'm afraid I'll forget it!</p>
+<h4>Proton Calendar</h4>
+<p>First I thought I could just use Proton Calendar, for now, so I wouldn't feel the pressure of not having any calendar at all on my phone. I had already made the switch to using Proton for email (though I chose to start fresh instead of importing anything from my old inbox) so it seemed like an easy solution. I'm just a free tier user so I soon discovered I could only have two calendars. There's just no way I could smash my calendars together until I only had two, so Proton was out.</p>
+<h4>Etar with DAVx⁵ &amp; Google Calendar</h4>
+<p>I tried to take the lazy route of just syncing my existing Google calendars to my phone with a handy middle-man called DAVx⁵ which would then sync all of that to my calendar client of choice (Etar, at least for now) but I didn't want to sign in to my old Google account at all on my phone so I tried to go the route of using the Google Cloud app development platform to create an OAuth2.0 user to use in DAVx⁵. I'm not really sure why I felt this was necessary because I really don't know how or if this is any different than just signing in to my Google account and linking it directly to DAVx⁵ but... I went through all that on my not-yet-de-Google laptop and it didn't work. I was getting an auth error in DAVx⁵. Maybe it had something to do with Graphene's anti-Google protections/architecture or maybe (probably) I had missed something while following the slightly outdated info in the DAVx⁵ docs. I didn't really attempt any troubleshooting since ultimately this wasn't what I really wanted anyway.</p>
+<h4>Etar with DAVx⁵ &amp; A Nextcloud CalDAV Server</h4>
+<p>So the next route I chose was Nextcloud. Obviously Nextcloud has many vocal proponents and it has been something I've thought about dipping into. I actually already had a docker-compose file configured and saved in Portainer from a few months back so I flipped the switch and deployed it. Once I logged into the web-ui I realized why I hadn't finished setting it up the first time: Nextcloud requires setting up a reverse proxy, even if you only want to run it locally. Now this is a pretty standard thing to have setup for anyone even dabbling in self-hosting things but unfortunately for me the first time I tried to go through setting it up was a bit of a mess and I spent countless frustrating hours on it before disconnecting it all and setting it aside for another day.* Today is definitely not that day, though I swear I am really going to get around to doing it when I finish setting up my DIY NAS.</p>
+<h4>Etar with DAVx⁵ &amp; Radicale</h4>
+<p>In the end I did what I should have done from the start: I exported all of my Google calendars as .ics files, set up a Radicale instance on my server, imported the .ics files to Radicale through the web-ui, synced DAVx⁵ with the Radicale server, and synced Etar with DAVx⁵. It really took very little effort.</p>
+<p>There's still a lot of testing to be done since my wife is firmly sticking with her Google calendar, so we'll see how this goes over the next few weeks. I'm anticipating hiccups but for now at least I know I won't be forgetting my haircut.</p>
+<h3>Further Thoughts</h3>
+<p>It would be nice to be able to sync my work calendar (an Outlook calendar behind an enterprise VPN) so that I don't have to manually create calendar entries on my personal calendar to match my work calendar. This gets especially annoying when meetings change day or time. I'm pretty firmly against &quot;work profiles&quot; on my devices so options are definitely going to be limited if not non-existant.</p>
+
+</article>
+<nav>
+    
+</nav>
+<br/>
+  </body>
+</html>
